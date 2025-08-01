@@ -20,7 +20,6 @@ Although these projects are private, there are specific files that are required 
 | **File**          | **Requirement** | **Description**                                                                                                             |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | `LICENSE`         | Mandatory       | Defines the licensing terms under which the project is distributed.                                                         |
-| `code.json`       | Mandatory       | Contains project metadata following government requirements.                                                                |
 | `README.md`       | Mandatory       | Provides an overview of the project, including its purpose, setup instructions, or any relevant notes for the developer(s). |
 | `COMMUNITY.md`    | Mandatory       | Lists project team members and points of contact.                                                                           |
 | `SECURITY.md`     | Recommended     | Outlines the agency's security policies, including how to report security issues or vulnerabilities in the code.            |
