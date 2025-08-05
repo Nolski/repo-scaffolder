@@ -1,6 +1,7 @@
 import subprocess
 import shutil
 import os
+from pathlib import Path
 
 REPO_NAME = '{{ cookiecutter.project_repo_name }}'
 ORG_NAME = '{{ cookiecutter.project_org }}'
@@ -109,6 +110,7 @@ def moveCookiecutterFile():
     try:
         github_dir = os.path.join(original_dir, ".github")
         os.chdir(github_dir)
+        Path("./codejson").mkdir(parents=True, exist_ok=True)
 
         source_path = "cookiecutter.json"
         destination_dir = "codejson"
