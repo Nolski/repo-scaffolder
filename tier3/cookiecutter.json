@@ -1,7 +1,7 @@
 {
   "project_name": "My Project",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
-  "project_org": "DSACMS",
+  "project_org": "UNDP",
   "project_repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "project_description": "This is the project description, could match github.com repo description.",
   "code_owners": "",
@@ -16,6 +16,5 @@
     "receive_updates": "Would you like to receive updates from the DSACMS team via pull requests?",
     "add_team": "Would you like to add project team members to COMMUNITY.md?",
     "add_maintainer": "Would you like to add maintainers, approvers, and/or reviewers to COMMUNITY.md?"
-  },
-  "_copy_without_render": [".github/codejson"]
+  }
 }

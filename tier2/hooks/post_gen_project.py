@@ -1,6 +1,7 @@
 import subprocess
 import shutil
 import os
+from pathlib import Path
 
 REPO_NAME = '{{ cookiecutter.project_repo_name }}'
 ORG_NAME = '{{ cookiecutter.project_org }}'
@@ -67,19 +68,20 @@ def addTeam():
             else:
                 f.write(line)
 
-def moveCookiecutterFile(): 
+def moveCookiecutterFile():
     original_dir = os.getcwd()
 
     try:
         github_dir = os.path.join(original_dir, ".github")
         os.chdir(github_dir)
+        Path("./codejson").mkdir(parents=True, exist_ok=True)
 
         source_path = "cookiecutter.json"
         destination_dir = "codejson"
         destination_path = os.path.join(destination_dir, "cookiecutter.json")
 
         shutil.move(source_path, destination_path)
-    
+
     finally:
         # Moves back to project dir
         os.chdir(original_dir)
@@ -99,9 +101,9 @@ def main():
 
     if RECEIVE_UPDATES == "True":
         addTopic()
-    
+
     print(f"\n****************************************")
     print(f"\n✅ {REPO_NAME} has successfully been created!\n")
-        
+
 if __name__ == "__main__":
     main()
