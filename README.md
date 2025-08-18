@@ -1,10 +1,10 @@
 # repo-scaffolder
 
-Templates and commandline tools for creating repositories for US Federal open source projects
+Templates and commandline tools for creating repositories for UNDP open source projects
 
 ## About the Project
 
-The CMS Open Source Program Office developed a [maturity model framework](https://github.com/DSACMS/repo-scaffolder/blob/main/maturity-model-tiers.md) to classify federal open source projects based on their maturity level. Each tier outlines specific files and content that are required or recommended to be included in the repository.
+The CMS Open Source Program Office developed a [maturity model framework](https://github.com/UNDP/repo-scaffolder/blob/main/maturity-model-tiers.md) to classify federal open source projects based on their maturity level. This is the basis of the UNDP maturity model that has been altered to fit the context of DPGs being produced within the UN. Each tier outlines specific files and content that are required or recommended to be included in the repository.
 
 The repo-scaffolder project creates repositories that adhere to open source hygiene standards and best practices. It provides templates and guidance for project metadata, contributing practices, community governance, feedback mechanisms, security policies, and more. Using [cookiecutter](https://github.com/cookiecutter/cookiecutter), repo-scaffolder helps teams identify what tier their project is classified as and fill in project information to be inputted into the file templates. In turn, this provides the project sufficient structure and foundation to promote a healthy open source ecosystem
 
@@ -72,7 +72,7 @@ A list of core team members responsible for the code and documentation in this r
 
 ### Create a new repository using repo-scaffolder
 
-The Open Source Program Office follows a maturity model framework to classify federal repositories according to their level of maturity: https://github.com/DSACMS/repo-scaffolder/blob/main/maturity-model-tiers.md.
+The Open Source Program Office follows a maturity model framework to classify federal repositories according to their level of maturity: https://github.com/UNDP/repo-scaffolder/blob/main/maturity-model-tiers.md.
 
 There are 4 tiers in the maturity model framework. The `/tier*` directory consists of templates, files, and scripts for each respective tier:
 
@@ -114,7 +114,7 @@ You can also follow the flowchart below to determine your project's tier.
 If you know what tier you need, you can run the cookiecutter for an individual tier. Use the below command with `X` substituted for the tier number.
 
 ```
-cookiecutter https://github.com/DSACMS/repo-scaffolder --directory=tierX
+cookiecutter https://github.com/UNDP/repo-scaffolder --directory=tierX
 ```
 
 ### Update an existing repository using repo-scaffolder
@@ -123,7 +123,7 @@ You can update existing projects with repo-scaffolder. Using the `-s` flag on co
 
 1. Create a new branch in your repo
 2. cd into folder above
-3. run: `cookiecutter -f -s https://github.com/DSACMS/repo-scaffolder --directory=tierX`
+3. run: `cookiecutter -f -s https://github.com/UNDP/repo-scaffolder --directory=tierX`
 4. Make sure when answering the questions you use the existing folder/project name
 5. Raise pr into main
 
@@ -149,7 +149,7 @@ The OSPO created various [GitHub Action workflows](../docs/workflows.md) that ca
 
 #### Updating projects with new repo-scaffolder upstream file changes
 
-When creating projects, if you want to receive updates then add `dsacms-tierX` as a github topic to the repo. The scaffolder repo includes github workflows that will find all repos with that tag and can raise a pull request with an updated string or adding a file. See [actions.md](https://github.com/DSACMS/repo-scaffolder/blob/main/.github/actions.md) for more information.
+When creating projects, if you want to receive updates then add `dsacms-tierX` as a github topic to the repo. The scaffolder repo includes github workflows that will find all repos with that tag and can raise a pull request with an updated string or adding a file. See [actions.md](https://github.com/UNDP/repo-scaffolder/blob/main/.github/actions.md) for more information.
 
 ### Identify missing files and information using repolinter
 
@@ -174,7 +174,7 @@ repolinter lint . --config path/to/repolinter.json # Use if the repolinter confi
 
 #### Automated repolinter actions
 
-A tool to automatically update repositories up to hygenic standards with the use of [Repolinter through GitHub Actions](https://github.com/DSACMS/repolinter-actions) is also available. This action sends a PR to your repository with templates of all the missing files and sections that are required using a predefined rulset. Visit the repository for more information on how to get this action up and running.
+A tool to automatically update repositories up to hygenic standards with the use of [Repolinter through GitHub Actions](https://github.com/UNDP/repolinter-actions) is also available. This action sends a PR to your repository with templates of all the missing files and sections that are required using a predefined rulset. Visit the repository for more information on how to get this action up and running.
 
 #### Automated Releases and Guidelines
 
@@ -229,7 +229,7 @@ Pull-requests are merged to `dev` and the changes are immediately deployed to th
 
 ## Contributing
 
-Thank you for considering contributing to an Open Source project of the US Government! For more information about our contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
+Thank you for considering contributing to an Open Source project of the UNDP! For more information about our contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Community
 
@@ -254,28 +254,6 @@ Service ([USDS.gov](https://usds.gov)), The Department of Health and Human
 Services ([HHS.gov](https://hhs.gov)), The Digital Service at the Centers for
 Medicare & Medicaid Services ([CMS.gov](https://cms.gov)) and The
 [USDigitalResponse.org](https://usdigitalresponse.org).
-
-## Policies
-
-### Open Source Policy
-
-We adhere to the [CMS Open Source
-Policy](https://github.com/CMSGov/cms-open-source-policy). If you have any
-questions, just [shoot us an email](mailto:opensource@cms.hhs.gov).
-
-### Security and Responsible Disclosure Policy
-
-_Submit a vulnerability:_ Vulnerability reports can be submitted through [Bugcrowd](https://bugcrowd.com/cms-vdp). Reports may be submitted anonymously. If you share contact information, we will acknowledge receipt of your report within 3 business days.
-
-For more information about our Security, Vulnerability, and Responsible Disclosure Policies, see [SECURITY.md](SECURITY.md).
-
-### Software Bill of Materials (SBOM)
-
-A Software Bill of Materials (SBOM) is a formal record containing the details and supply chain relationships of various components used in building software.
-
-In the spirit of [Executive Order 14028 - Improving the Nation’s Cyber Security](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/information-technology-category/it-security/executive-order-14028), a SBOM for this repository is provided here: https://github.com/DSACMS/repo-scaffolder/network/dependencies.
-
-For more information and resources about SBOMs, visit: https://www.cisa.gov/sbom.
 
 ## Public domain
 
