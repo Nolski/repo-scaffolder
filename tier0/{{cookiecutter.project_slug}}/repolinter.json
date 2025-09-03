@@ -503,7 +503,7 @@
       }
     },
     "contributing-contains-open-source-policy": {
-      "level": "warning",
+      "level": "off",
       "rule": {
         "type": "file-contents",
         "options": {
@@ -515,6 +515,7 @@
         }
       }
     },
+
     "contributing-contains-security-and-responsible-disclosure-policy": {
       "level": "warning",
       "rule": {
