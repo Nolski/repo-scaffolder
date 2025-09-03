@@ -41,9 +41,6 @@
     "contributing-contains-writing-issues": {
       "level": "error"
     },
-    "contributing-contains-policies": {
-      "level": "error"
-    },
     "contributing-contains-security-and-responsible-disclosure-policy": {
       "level": "error"
     }

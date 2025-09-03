@@ -110,9 +110,6 @@
     "contributing-contains-documentation": {
       "level": "warning"
     },
-    "contributing-contains-policies": {
-      "level": "error"
-    },
     "contributing-contains-security-and-responsible-disclosure-policy": {
       "level": "error"
     },

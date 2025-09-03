@@ -490,7 +490,7 @@
       }
     },
     "contributing-contains-policies": {
-      "level": "warning",
+      "level": "off",
       "rule": {
         "type": "file-contents",
         "options": {
