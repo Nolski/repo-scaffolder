@@ -164,32 +164,6 @@
         }
       }
     },
-    "readme-contains-agency-mission": {
-        "level": "warning",
-        "rule": {
-            "type": "file-contents",
-            "options": {
-                "globsAll": ["README.md"],
-                "content": "Agency Mission",
-                "flags": "i",
-                "file-name": "README.md",
-                "file-content": "## Agency Mission \n<!-- Provide the mission of the agency and how this project aligns. --> \n"
-            }
-        }
-    },
-    "readme-contains-team-mission": {
-      "level": "warning",
-      "rule": {
-        "type": "file-contents",
-        "options": {
-          "globsAll": ["README.md"],
-          "content": "Team Mission",
-          "flags": "i",
-          "file-name": "README.md",
-          "file-content": "## Team Mission \n<!-- Provide the team's mission and how they work together. --> \n"
-        }
-      }
-    },
     "readme-contains-core-team": {
       "level": "warning",
       "rule": {
@@ -200,19 +174,6 @@
           "flags": "i",
           "file-name": "README.md",
           "file-content": "## Core Team \nAn up-to-date list of core team members can be found in [COMMUNITY.md](COMMUNITY.md). At this time, the project is still building the core team and defining roles and responsibilities. We are eagerly seeking individuals who would like to join the community and help us define and fill these roles. \n"
-        }
-      }
-    },
-    "readme-contains-documentation-index": {
-      "level": "warning",
-      "rule": {
-        "type": "file-contents",
-        "options": {
-          "globsAll": ["README.md"],
-          "content": "Documentation Index",
-          "flags": "i",
-          "file-name": "README.md",
-          "file-content": "## Documentation Index \n<!-- TODO: This is a like a 'table of contents' for your documentation. Tier 0/1 projects with simple README.md files without many sections may or may not need this, but it is still extremely helpful to provide 'bookmark' or 'anchor' links to specific sections of your file to be referenced in tickets, docs, or other communication channels. --> \n **{list of .md at top directory and descriptions}** \n"
         }
       }
     },
@@ -265,19 +226,6 @@
           "flags": "i",
           "file-name": "README.md",
           "file-content": "## Coding Style and Linters \n<!-- TODO - Add the repo's linting and code style guidelines --> \n Each application has its own linting and testing guidelines. Lint and code tests are run on each commit, so linters and tests should be run locally before commiting. \n"
-        }
-      }
-    },
-    "readme-contains-branching-model": {
-      "level": "warning",
-      "rule": {
-        "type": "file-contents",
-        "options": {
-          "globsAll": ["README.md"],
-          "content": "Branching Model",
-          "flags": "i",
-          "file-name": "README.md",
-          "file-content": "## Branching Model \n <!-- TODO - with example below:\n This project follows [trunk-based development](https://trunkbaseddevelopment.com/), which means:\n\n* Make small changes in [short-lived feature branches](https://trunkbaseddevelopment.com/short-lived-feature-branches/) and merge to `main` frequently.\n* Be open to submitting multiple small pull requests for a single ticket (i.e. reference the same ticket across multiple pull requests).\n* Treat each change you merge to `main` as immediately deployable to production. Do not merge changes that depend on subsequent changes you plan to make, even if you plan to make those changes shortly.\n* Ticket any unfinished or partially finished work.\n* Tests should be written for changes introduced, and adhere to the text percentage threshold determined by the project.\n\nThis project uses **continuous deployment** using [Github Actions](https://github.com/features/actions) which is configured in the [./github/workflows](.github/workflows) directory.\n\nPull-requests are merged to `main` and the changes are immediately deployed to the development environment. Releases are created to push changes to production.--> \n"
         }
       }
     },
@@ -359,45 +307,6 @@
         }
       }
     },
-    "readme-contains-glossary": {
-      "level": "warning",
-      "rule": {
-        "type": "file-contents",
-        "options": {
-          "globsAll": ["README.md"],
-          "content": "Glossary",
-          "flags": "i",
-          "file-name": "README.md",
-          "file-content": "## Glossary \nInformation about terminology and acronyms used in this documentation may be found in [GLOSSARY.md](GLOSSARY.md). \n"
-        }
-      }
-    },
-    "readme-contains-policies": {
-      "level": "error",
-      "rule": {
-        "type": "file-contents",
-        "options": {
-          "globsAll": ["README.md"],
-          "content": "Policies",
-          "flags": "i",
-          "file-name": "README.md",
-          "file-content": "## Policies \n"
-        }
-      }
-    },
-    "readme-contains-open-source-policy": {
-      "level": "error",
-      "rule": {
-        "type": "file-contents",
-        "options": {
-          "globsAll": ["README.md"],
-          "content": "Open Source Policy",
-          "flags": "i",
-          "file-name": "README.md",
-          "file-content": "### Open Source Policy \nWe adhere to the [CMS Open Source Policy](https://github.com/CMSGov/cms-open-source-policy). If you have any questions, just [shoot us an email](mailto:opensource@cms.hhs.gov). \n"
-        }
-      }
-    },
     "readme-contains-security-and-responsible-disclosure-policy": {
       "level": "error",
       "rule": {
@@ -408,32 +317,6 @@
           "flags": "i",
           "file-name": "README.md",
           "file-content": "### Security and Responsible Disclosure Policy \n*Submit a vulnerability:* Vulnerability reports can be submitted through [Bugcrowd](https://bugcrowd.com/cms-vdp). Reports may be submitted anonymously. If you share contact information, we will acknowledge receipt of your report within 3 business days.\nFor more information about our Security, Vulnerability, and Responsible Disclosure Policies, see [SECURITY.md](SECURITY.md). \n"
-        }
-      }
-    },
-    "readme-contains-public-domain": {
-      "level": "error",
-      "rule": {
-        "type": "file-contents",
-        "options": {
-          "globsAll": ["README.md"],
-          "content": "Public domain",
-          "flags": "i",
-          "file-name": "README.md",
-          "file-content": "## Public Domain \nThis project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/) as indicated in [LICENSE](LICENSE).\nAll contributions to this project will be released under the CC0 dedication. By submitting a pull request or issue, you are agreeing to comply with this waiver of copyright interest.\n"
-        }
-      }
-    },
-    "readme-contains-sbom": {
-      "level": "error",
-      "rule": {
-      "type": "file-contents",
-      "options": {
-        "globsAll": ["README.md"],
-        "content": "Software Bill of Materials",
-        "flags": "i",
-        "file-name": "README.md",
-        "file-content": "### Software Bill of Materials (SBOM) \nA Software Bill of Materials (SBOM) is a formal record containing the details and supply chain relationships of various components used in building software.\nIn the spirit of [Executive Order 14028 - Improving the Nation's Cyber Security](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/information-technology-category/it-security/executive-order-14028), a SBOM for this repository is provided here: https://github.com/{repo_org}/{repo_name}/network/dependencies.\nFor more information and resources about SBOMs, visit: https://www.cisa.gov/sbom."
         }
       }
     },
@@ -645,19 +528,6 @@
         }
       }
     },
-    "contributing-contains-public-domain": {
-      "level": "warning",
-      "rule": {
-        "type": "file-contents",
-        "options": {
-          "globsAll": ["{docs/,.github/,}CONTRIBUTING.md"],
-          "content": "Public domain",
-          "flags": "i",
-          "file-name": "CONTRIBUTING.md",
-          "file-content": "## Public Domain \nThis project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/) as indicated in [LICENSE](LICENSE).\n All contributions to this project will be released under the CC0 dedication. By submitting a pull request or issue, you are agreeing to comply with this waiver of copyright interest.\n"
-        }
-      }
-    },
     "governance-contains-governance": {
       "level": "off",
       "rule": {
@@ -746,7 +616,7 @@
           "flags": "i",
           "file-name": "COMMUNITY.md",
           "file-content": "## Project Members \n<!-- TODO: Who are the points of contact in your project who are responsible/accountable for the project? This can often be an engineering or design manager or leader, who may or may not be the primary maintainers of the project. \n Roles to include, but not limited to: Project Owner, Technical Lead, Developers/Contributors, Community Manager, Security Team, Policy Advisor, Contracting Officer's Representative, Compliance Officer, Procurement Officer --> \n\n{{ cookiecutter.project_repo_name }} is supported by a dedicated team of individuals fulfilling various roles to ensure its success, security, and alignment with government standards and agency goals.\n\n| Role   | Name    | Affiliation    |\n| :----- | :------ | :------------- |\n| {role} | {names} | {affiliations} |\n"
-        }           
+        }
       }
     },
     "community-contains-roles-and-responsibilities": {

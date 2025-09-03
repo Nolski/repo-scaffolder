@@ -119,9 +119,6 @@
     "contributing-contains-security-and-responsible-disclosure-policy": {
       "level": "error"
     },
-    "contributing-contains-public-domain": {
-      "level": "error"
-    },
     "community-contains-table-of-project-members": {
       "level": "error"
     },
