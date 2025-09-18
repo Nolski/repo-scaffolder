@@ -16,10 +16,10 @@ First, install the required dependencies.
 To create a new repository using repo-scaffolder, run the production version of repo-scaffolder. Subsitute `X` with the tier number you'd like to create in the directory flag.
 
 ```
-cookiecutter https://github.com/DSACMS/repo-scaffolder --directory=tierX
+cookiecutter https://github.com/nolski/repo-scaffolder --directory=tierX
 ```
 
-More commands on using repo-scaffolder for repository creation and maintenance can be found here: https://github.com/DSACMS/repo-scaffolder/blob/main/README.md#Using-repo-scaffolder
+More commands on using repo-scaffolder for repository creation and maintenance can be found here: https://github.com/nolski/repo-scaffolder/blob/main/README.md#Using-repo-scaffolder
 
 ### Team Specific Guidelines
 
@@ -32,7 +32,7 @@ More commands on using repo-scaffolder for repository creation and maintenance c
 
 1. Clone the repo
 
-   `git clone https://github.com/DSACMS/metrics.git`
+   `git clone https://github.com/nolski/metrics.git`
 
 2. Install the required packages in requirements.txt
 
@@ -134,7 +134,7 @@ will be merged directly into the main branch.
 ## Documentation
 
 We also welcome improvements to the project documentation or to the existing
-docs. Please file an [issue](https://github.com/DSACMS/repo-scaffolder/issues).
+docs. Please file an [issue](https://github.com/nolski/repo-scaffolder/issues).
 
 ## Policies
 

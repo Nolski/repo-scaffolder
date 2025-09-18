@@ -36,8 +36,8 @@ This is a review process to approve CMS-developed software to be released open s
 
 Does your repository align with the requirements of a Tier 1 project? To verify:
 
-- Review the flowchart or use `tier-determiner.py` provided in the [README.md](https://github.com/DSACMS/repo-scaffolder?tab=readme-ov-file#need-help-picking-a-maturity-tier).
-- Read more about [Tier 1](https://github.com/DSACMS/repo-scaffolder/tree/main/tier1) and the overall [CMS OSPO maturity model framework](https://github.com/DSACMS/repo-scaffolder/blob/main/maturity-model-tiers.md).
+- Review the flowchart or use `tier-determiner.py` provided in the [README.md](https://github.com/nolski/repo-scaffolder?tab=readme-ov-file#need-help-picking-a-maturity-tier).
+- Read more about [Tier 1](https://github.com/nolski/repo-scaffolder/tree/main/tier1) and the overall [CMS OSPO maturity model framework](https://github.com/nolski/repo-scaffolder/blob/main/maturity-model-tiers.md).
 
 #### Results
 
@@ -131,7 +131,7 @@ Below is a list of suggested tools to run for code analysis:
 | Tool            |                                      Description                                       |                                                                                                             Link                                                                                                              |
 | :-------------- | :------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | Repo Linter     |             Lint repositories for common issues such as missing files etc.             |                                                                                            https://github.com/todogroup/repolinter                                                                                            |
-| gitleaks        |                   Protect and discover secrets using Gitleaks :key:                    | https://github.com/gitleaks/gitleaks <br /> Use and run [gitleaks.yml](https://github.com/DSACMS/repo-scaffolder/blob/main/tier1/%7B%7Bcookiecutter.project_slug%7D%7D/.github/workflows/gitleaks.yml) provided in repository |
+| gitleaks        |                   Protect and discover secrets using Gitleaks :key:                    | https://github.com/gitleaks/gitleaks <br /> Use and run [gitleaks.yml](https://github.com/nolski/repo-scaffolder/blob/main/tier1/%7B%7Bcookiecutter.project_slug%7D%7D/.github/workflows/gitleaks.yml) provided in repository |
 | git filter-repo | Entirely remove unwanted files / files with sensitive data from a repository's history |                                                   https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository                                                    |
 
 #### Results
@@ -171,7 +171,7 @@ Consider using the following tools to perform the tasks above:
 
 | Tool            | Description                                                                                             | Link                                                                                                                                                                                                                                                                                                          |
 | --------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| gitleaks        | Open source tool that detects and prevents secrets (passwords/api/ssh keys) checked-in to your git repo | https://github.com/gitleaks/gitleaks https://akachandwani.medium.com/what-is-gitleaks-and-how-to-use-it-a05f2fb5b034 <br /> Use and run [gitleaks.yml](https://github.com/DSACMS/repo-scaffolder/blob/main/tier1/%7B%7Bcookiecutter.project_slug%7D%7D/.github/workflows/gitleaks.yml) provided in repository |
+| gitleaks        | Open source tool that detects and prevents secrets (passwords/api/ssh keys) checked-in to your git repo | https://github.com/gitleaks/gitleaks https://akachandwani.medium.com/what-is-gitleaks-and-how-to-use-it-a05f2fb5b034 <br /> Use and run [gitleaks.yml](https://github.com/nolski/repo-scaffolder/blob/main/tier1/%7B%7Bcookiecutter.project_slug%7D%7D/.github/workflows/gitleaks.yml) provided in repository |
 | git filter-repo | Entirely remove unwanted files / files with sensitive data from a repository's history                  | https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository                                                                                                                                                                                      |
 
 #### Results
@@ -184,7 +184,7 @@ As part of our repository hygiene requirements, the project must include certain
 
 #### Running repolinter on your repository locally
 
-1. Add [repolinter.json](https://github.com/DSACMS/repo-scaffolder/blob/main/tier1/%7B%7Bcookiecutter.project_slug%7D%7D/repolinter.json) to the root directory of your project
+1. Add [repolinter.json](https://github.com/nolski/repo-scaffolder/blob/main/tier1/%7B%7Bcookiecutter.project_slug%7D%7D/repolinter.json) to the root directory of your project
 
 2. Run command:
 
@@ -198,7 +198,7 @@ repolinter lint .
 
 #### Running repolinter on your repository via GitHub Actions
 
-1. Add the tier-specific [repoHygieneCheck.yml](https://github.com/DSACMS/repo-scaffolder/blob/main/tier1/%7B%7Bcookiecutter.project_slug%7D%7D/.github/workflows/repoHygieneCheck.yml) to the github directory of your project. The file includes a job that runs repolinter called [repolinter-checks](https://github.com/DSACMS/repo-scaffolder/blob/main/tier1/%7B%7Bcookiecutter.project_slug%7D%7D/.github/workflows/repoHygieneCheck.yml#L56)
+1. Add the tier-specific [repoHygieneCheck.yml](https://github.com/nolski/repo-scaffolder/blob/main/tier1/%7B%7Bcookiecutter.project_slug%7D%7D/.github/workflows/repoHygieneCheck.yml) to the github directory of your project. The file includes a job that runs repolinter called [repolinter-checks](https://github.com/nolski/repo-scaffolder/blob/main/tier1/%7B%7Bcookiecutter.project_slug%7D%7D/.github/workflows/repoHygieneCheck.yml#L56)
 
 2. Manually trigger the workflow
 
@@ -285,9 +285,9 @@ _Insert Review Here_
 
 ### Review Project Metadata
 
-As part of the [SHARE IT Act](https://www.congress.gov/bill/118th-congress/house-bill/9566/text/ih), [Federal Source Code Policy](https://obamawhitehouse.archives.gov/sites/default/files/omb/memoranda/2016/m_16_21.pdf), and the agency’s software inventory tracking initiatives, each repository must contain a [code.json file](https://github.com/DSACMS/gov-codejson/blob/main/docs/metadata.md), storing metadata on your project.
+As part of the [SHARE IT Act](https://www.congress.gov/bill/118th-congress/house-bill/9566/text/ih), [Federal Source Code Policy](https://obamawhitehouse.archives.gov/sites/default/files/omb/memoranda/2016/m_16_21.pdf), and the agency’s software inventory tracking initiatives, each repository must contain a [code.json file](https://github.com/nolski/gov-codejson/blob/main/docs/metadata.md), storing metadata on your project.
 
-For more information on code.json, please review the [gov-codejson documentation repository](https://github.com/DSACMS/gov-codejson).
+For more information on code.json, please review the [gov-codejson documentation repository](https://github.com/nolski/gov-codejson).
 
 #### Creating code.json on your repository
 
@@ -297,7 +297,7 @@ Users can fill out a web form that creates a code.json file to be uploaded to a 
 
 **Using automated-codejson-generator**
 
-The [automated-codejson-generator](https://github.com/DSACMS/automated-codejson-generator) is a GitHub Action that automatically generates and maintains code.json files for federal open source repositories. It ensures schema consistency and automates various metadata calculations.
+The [automated-codejson-generator](https://github.com/nolski/automated-codejson-generator) is a GitHub Action that automatically generates and maintains code.json files for federal open source repositories. It ensures schema consistency and automates various metadata calculations.
 
 **Using the repo-scaffolder cookiecutter CLI**
 
@@ -311,7 +311,7 @@ cookiecutter . –directory=codejson
 
 3. A code.json file will be generated with your responses.
 
-As you continue development in this repository, it is important to keep this file up-to-date. Our [automated-codejson-generator](https://github.com/DSACMS/automated-codejson-generator) can assist with updating this file.
+As you continue development in this repository, it is important to keep this file up-to-date. Our [automated-codejson-generator](https://github.com/nolski/automated-codejson-generator) can assist with updating this file.
 
 #### Results
 
@@ -418,7 +418,7 @@ quality:
 
 - [ ] **Add Repolinter GH Action to CI**
 
-  _For ongoing adherence to repository hygiene standards, integrate the [repolinter GitHub Action](https://github.com/DSACMS/metrics/blob/main/.github/workflows/checks.yml) into your CI pipeline. This addition enhances your workflow by automatically enforcing repository cleanliness standards._
+  _For ongoing adherence to repository hygiene standards, integrate the [repolinter GitHub Action](https://github.com/nolski/metrics/blob/main/.github/workflows/checks.yml) into your CI pipeline. This addition enhances your workflow by automatically enforcing repository cleanliness standards._
 
 - [ ] **Optional: DCO (Developer Certificate of Origin)**
 
@@ -456,6 +456,6 @@ Be sure to include the following information:
 
 Add your project to our inventories.
 
-- [ ] **Add to https://github.com/dsacms/open projects inventory**
+- [ ] **Add to https://github.com/nolski/open projects inventory**
 
 - [ ] **Add code.json to repository and sent over a pull request to [code.gov](https://code.gov/)**

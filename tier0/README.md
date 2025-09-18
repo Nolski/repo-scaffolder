@@ -25,7 +25,7 @@ Although these projects are private, there are specific files that are required 
 | `SECURITY.md`     | Recommended     | Outlines the agency's security policies, including how to report security issues or vulnerabilities in the code.            |
 | `CONTRIBUTING.md` | Recommended     | Guidelines for contributing, useful if the project is later opened to collaborators or transitioned to a public repository. |
 
-For more information about sections and content within the files above, please visit [maturity-model-tiers.md](https://github.com/DSACMS/repo-scaffolder/blob/main/maturity-model-tiers.md).
+For more information about sections and content within the files above, please visit [maturity-model-tiers.md](https://github.com/nolski/repo-scaffolder/blob/main/maturity-model-tiers.md).
 
 ## .github directory
 
@@ -39,4 +39,4 @@ As part of maintaining repository hygiene, repolinter is used to identify missin
 repolinter lint .
 ```
 
-A GitHub action is also available for running repolinter checks. For more information, please visit [README.md](https://github.com/DSACMS/repo-scaffolder?tab=readme-ov-file#identify-missing-files-and-information-using-repolinter).
+A GitHub action is also available for running repolinter checks. For more information, please visit [README.md](https://github.com/nolski/repo-scaffolder?tab=readme-ov-file#identify-missing-files-and-information-using-repolinter).

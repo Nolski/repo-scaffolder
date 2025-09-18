@@ -78,7 +78,7 @@ Each tier requires certain files that must be included in the repository.
 | File                                                                           | Tier 0                                 | Tier 1                                 | Tier 2                                 | Tier 3                            | Tier 4                            |
 | ------------------------------------------------------------------------------ | -------------------------------------- | -------------------------------------- | -------------------------------------- | --------------------------------- | --------------------------------- |
 | LICENSE                                                                        | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$ | $\color{green}\large{\textsf{M}}$ |
-| [code.json](https://github.com/DSACMS/gov-codejson/blob/main/docs/metadata.md) | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$ | $\color{green}\large{\textsf{M}}$ |
+| [code.json](https://github.com/nolski/gov-codejson/blob/main/docs/metadata.md) | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$ | $\color{green}\large{\textsf{M}}$ |
 | README.md                                                                      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$ | $\color{green}\large{\textsf{M}}$ |
 | COMMUNITY.md                                                                   | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$ | $\color{green}\large{\textsf{M}}$ |
 | SECURITY.md                                                                    | $\color{blue}\large{\textsf{R}}$       | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$ | $\color{green}\large{\textsf{M}}$ |
@@ -116,13 +116,13 @@ Each tier outlines specific content that are required or recommended to be inclu
     </tr>
         <tr>
       <td>code.json</td>
-      <td><a href="https://github.com/DSACMS/gov-codejson/blob/main/schemas">Metadata</a></td>
+      <td><a href="https://github.com/nolski/gov-codejson/blob/main/schemas">Metadata</a></td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>All repositories, whether private or public, must include a code.json file containing project metadata. For more information, visit the <a href="https://github.com/DSACMS/gov-codejson">code.json documentation repository</a>.</td>
+      <td>All repositories, whether private or public, must include a code.json file containing project metadata. For more information, visit the <a href="https://github.com/nolski/gov-codejson">code.json documentation repository</a>.</td>
     </tr>
     <tr>
       <td rowspan="20">README.md</td>

@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     treeGraphic.src = `./assets/images/tier${tier}-tree.svg`;
     treeGraphic.alt = `Tier ${tier} Tree`;
     tierResult.innerHTML = `Your project is: <strong>Tier ${tier} - ${name}</strong><br />
-                              <a href="https://github.com/DSACMS/repo-scaffolder/tree/main/tier${tier}" class="doc-link"">
+                              <a href="https://github.com/nolski/repo-scaffolder/tree/main/tier${tier}" class="doc-link"">
                               Learn more about this maturity model tier
                               <span aria-hidden="true">→</span>
                               </a>`;

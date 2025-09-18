@@ -29,7 +29,7 @@ There are specific files that are required and recommended to include in the rep
 | `CODE_OF_CONDUCT.md` | Mandatory       | Establishes guidelines for acceptable behavior within the community, setting expectations for how contributors should interact in a respectful and collaborative manner. |
 | `GOVERNANCE.md`      | Recommended     | Describes the governance model of the project, such as decision-making processes and rules for contributing. It ensures a transparent process for managing the project.  |
 
-For more information about required sections and content within the files above, please visit [maturity-model-tiers.md](https://github.com/DSACMS/repo-scaffolder/blob/main/maturity-model-tiers.md).
+For more information about required sections and content within the files above, please visit [maturity-model-tiers.md](https://github.com/nolski/repo-scaffolder/blob/main/maturity-model-tiers.md).
 
 ## .github directory
 
@@ -43,4 +43,4 @@ As part of maintaining repository hygiene, repolinter is used to identify missin
 repolinter lint .
 ```
 
-A GitHub action is also available for running repolinter checks. For more information, please visit [README.md](https://github.com/DSACMS/repo-scaffolder?tab=readme-ov-file#identify-missing-files-and-information-using-repolinter).
+A GitHub action is also available for running repolinter checks. For more information, please visit [README.md](https://github.com/nolski/repo-scaffolder?tab=readme-ov-file#identify-missing-files-and-information-using-repolinter).

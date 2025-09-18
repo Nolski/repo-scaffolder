@@ -29,7 +29,7 @@ def main():
 
     print("🌱 The OSPO follows a maturity model framework to classify projects according to their open source journey:")
     print_tier_description()
-    print("ℹ️  Visit https://github.com/DSACMS/repo-scaffolder/blob/main/maturity-model-tiers.md for more information.\n")
+    print("ℹ️  Visit https://github.com/nolski/repo-scaffolder/blob/main/maturity-model-tiers.md for more information.\n")
 
     print("\n📝 Answer the following questions to identify the maturity model tier of your project.")
 
@@ -74,11 +74,11 @@ def main():
     print(f"\n****************************************")
     print(f"\n📚 Your project is classified as: Tier {tier}")
     print_tier_description(tier)
-    print(f"ℹ️  Visit https://github.com/DSACMS/repo-scaffolder/blob/main/tier{tier} for more information about the maturity model tier.")
+    print(f"ℹ️  Visit https://github.com/nolski/repo-scaffolder/blob/main/tier{tier} for more information about the maturity model tier.")
 
     # Provide next steps
     print(f"⚙️  Next, create your Tier {tier} repository by running the command below:")
-    print(f"   cookiecutter https://github.com/DSACMS/repo-scaffolder --directory=tier{tier}\n")
+    print(f"   cookiecutter https://github.com/nolski/repo-scaffolder --directory=tier{tier}\n")
     
 
 if __name__ == "__main__":
