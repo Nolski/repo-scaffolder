@@ -4,3 +4,14 @@
 id_rsa
 secrets_repo/
 internal_only_repo/
+
+__pycache__/
+*.pyc
+
+# Generated DPG assessment / audit outputs (per-repo reports & artifacts, not source)
+assessments/
+audit-report*.json
+dpg-audit-report*.json
+dpg-assessment*.json
+dpg-nominee*.json
+*.assessment.docx

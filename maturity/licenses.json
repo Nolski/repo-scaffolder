@@ -1,0 +1,44 @@
+{
+  "_comment": "DPGA-approved open license allow-lists (DPG Standard Indicator 2). Derived from DPGAlliance/publicgoods-candidates help-center/licenses.md + nominee-schema.json (The Unlicense). SPDX identifiers. Used by both the cookiecutter license chooser (tier hooks) and scripts/audit license_check. Authorities: software=opensource.org/licenses, content=creativecommons.org, data=opendefinition.org/licenses.",
+  "categories": {
+    "software": {
+      "authority": "https://opensource.org/licenses",
+      "note": "OSI-approved licenses ONLY. CC0/CC-BY are NOT valid for software code under the DPG Standard.",
+      "recommended_default_prompt": ["MIT", "Apache-2.0", "GPL-3.0", "AGPL-3.0", "MPL-2.0", "BSD-3-Clause"],
+      "spdx": [
+        "0BSD","AAL","AFL-3.0","AGPL-3.0","Apache-1.1","Apache-2.0","APL-1.0","APSL-2.0","Artistic-1.0","Artistic-2.0",
+        "BSD-1-Clause","BSD-2-Clause","BSD-2-Clause-Patent","BSD-3-Clause","BSD-3-Clause-LBNL","BSL-1.0","CAL-1.0",
+        "CAL-1.0-Combined-Work-Exception","CATOSL-1.1","CDDL-1.0","CECILL-2.1","CNRI-Python","CPAL-1.0","CPL-1.0",
+        "ECL-1.0","ECL-2.0","EFL-1.0","EFL-2.0","Entessa","EPL-1.0","EPL-2.0","EUDatagrid","EUPL-1.2","Fair",
+        "Frameworx-1.0","GPL-2.0","GPL-3.0","HPND","IPA","IPL-1.0","ISC","LGPL-2.1","LGPL-3.0","LiLiQ-P-1.1",
+        "LiLiQ-R-1.1","LiLiQ-Rplus-1.1","LPL-1.0","LPL-1.02","LPPL-1.3c","MirOS","MIT","MIT-0","Motosoto","MPL-1.0",
+        "MPL-1.1","MPL-2.0","MPL-2.0-no-copyleft-exception","MS-PL","MS-RL","MulanPSL-2.0","Multics","NASA-1.3",
+        "Naumen","NCSA","NGPL","Nokia","NPOSL-3.0","NTP","OCLC-2.0","OFL-1.1","OFL-1.1-no-RFN","OFL-1.1-RFN",
+        "OGTSL","OLDAP-2.8","OSET-PL-2.1","OSL-1.0","OSL-2.1","OSL-3.0","PHP-3.0","PHP-3.01","PostgreSQL","Python-2.0",
+        "QPL-1.0","RPL-1.1","RPL-1.5","RPSL-1.0","RSCPL","SimPL-2.0","Sleepycat","SPL-1.0","UCL-1.0","Unicode-DFS-2015",
+        "Unicode-DFS-2016","Unlicense","UPL-1.0","VSL-1.0","W3C","Watcom-1.0","Xnet","wxWindows","Zlib","ZPL-2.0"
+      ]
+    },
+    "content": {
+      "authority": "https://creativecommons.org/",
+      "note": "Creative Commons. CC-BY-4.0, CC-BY-SA-4.0, CC0-1.0 encouraged. NC variants accepted but restrict commercial reuse.",
+      "recommended_default_prompt": ["CC-BY-4.0", "CC-BY-SA-4.0", "CC0-1.0"],
+      "spdx": [
+        "CC-BY-1.0","CC-BY-2.0","CC-BY-2.5","CC-BY-3.0","CC-BY-3.0-AT","CC-BY-3.0-US","CC-BY-4.0",
+        "CC-BY-SA-1.0","CC-BY-SA-2.0","CC-BY-SA-2.5","CC-BY-SA-3.0","CC-BY-SA-3.0-AT","CC-BY-SA-3.0-US","CC-BY-SA-4.0",
+        "CC0-1.0","CC-BY-3.0-IGO","CC-BY-SA-3.0-IGO",
+        "CC-BY-NC-1.0","CC-BY-NC-2.0","CC-BY-NC-2.5","CC-BY-NC-3.0","CC-BY-NC-3.0-US","CC-BY-NC-4.0",
+        "CC-BY-NC-SA-1.0","CC-BY-NC-SA-2.0","CC-BY-NC-SA-2.5","CC-BY-NC-SA-3.0","CC-BY-NC-SA-3.0-US","CC-BY-NC-SA-4.0",
+        "CC-BY-NC-3.0-IGO","CC-BY-NC-SA-3.0-IGO"
+      ]
+    },
+    "data": {
+      "authority": "https://opendefinition.org/licenses/",
+      "note": "Open Definition conformant licenses for open data.",
+      "recommended_default_prompt": ["CC0-1.0", "CC-BY-4.0", "ODbL-1.0"],
+      "spdx": [
+        "CC-BY-4.0","CC-BY-SA-4.0","CC0-1.0","ODbL-1.0","ODC-By-1.0","PDDL-1.0","CC-BY-3.0-IGO","CC-BY-SA-3.0-IGO"
+      ]
+    }
+  }
+}
