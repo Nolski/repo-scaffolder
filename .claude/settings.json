@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(dpg-assess)",
+      "Skill(dpg-remediate)",
+      "Skill(dpg-scaffold)",
+      "Bash(python3 scripts/audit/run_audit.py:*)",
+      "Read",
+      "Glob",
+      "Grep"
+    ]
+  }
+}
