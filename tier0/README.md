@@ -1,4 +1,4 @@
-# Tier 0: Private Repository
+# Tier 0: Private / Prototype
 
 ## What is a Tier 0 Project?
 
@@ -15,28 +15,32 @@ The main purpose of a Tier 0 project is to provide a space for initial developme
 
 ## Files for a Tier 0 Project
 
-Although these projects are private, there are specific files that are required and recommended to include in the repository as part of the CMS Open Source Program Office's repository hygiene guidelines and standards.
+Although these projects are private, there are specific files that are required and recommended to include in the repository as part of the DPG readiness guidelines (see ../maturity/indicators.md).
 
 | **File**          | **Requirement** | **Description**                                                                                                             |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | `LICENSE`         | Mandatory       | Defines the licensing terms under which the project is distributed.                                                         |
 | `README.md`       | Mandatory       | Provides an overview of the project, including its purpose, setup instructions, or any relevant notes for the developer(s). |
 | `COMMUNITY.md`    | Mandatory       | Lists project team members and points of contact.                                                                           |
-| `SECURITY.md`     | Recommended     | Outlines the agency's security policies, including how to report security issues or vulnerabilities in the code.            |
+| `SECURITY.md`     | Recommended     | Outlines the project's security policies, including how to report security issues or vulnerabilities in the code.            |
 | `CONTRIBUTING.md` | Recommended     | Guidelines for contributing, useful if the project is later opened to collaborators or transitioned to a public repository. |
 
-For more information about sections and content within the files above, please visit [maturity-model-tiers.md](https://github.com/nolski/repo-scaffolder/blob/main/maturity-model-tiers.md).
+For more information about sections and content within the files above, please visit [maturity-model-tiers.md](https://github.com/UNDP/repo-scaffolder/blob/main/maturity-model-tiers.md).
 
 ## .github directory
 
 The .github directory includes various files such as GitHub action workflows, code.json metadata cookiecutter creation, and issue templates. For more information, please visit the [.github-directory.md]([../docs/.github-directory.md).
 
-## Repository Hygiene using repolinter
+## Checking DPG readiness
 
-As part of maintaining repository hygiene, repolinter is used to identify missing files and information. `repolinter.json` defines a set of checks that verify the existence of these files in your repository. To run repolinter, execute the following command from the root directory:
+Repository hygiene and DPG-indicator coverage are checked by the audit engine in this
+project (not repolinter, which is archived). From the scaffolder repo run:
 
 ```
-repolinter lint .
+python3 scripts/audit/run_audit.py <path-to-this-repo> --type software
 ```
 
-A GitHub action is also available for running repolinter checks. For more information, please visit [README.md](https://github.com/nolski/repo-scaffolder?tab=readme-ov-file#identify-missing-files-and-information-using-repolinter).
+For a full, evidence-based assessment scored against all 9 DPG indicators (and guidance to
+close any gaps), use the `dpg-assess` and `dpg-remediate` Claude skills. See the project
+[README.md](https://github.com/UNDP/repo-scaffolder#how-it-works--claude-skills) and
+[`maturity/indicators.md`](https://github.com/UNDP/repo-scaffolder/blob/main/maturity/indicators.md).

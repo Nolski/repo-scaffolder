@@ -1,6 +1,46 @@
 # Governance
 
-<!-- TODO: Starting at Tier 3 GOVERNANCE.md has basic language about early community governance, how the project make decisions, and how contributors are elevated through the leadership process if any (e.g. joining teams, getting maintainer status, etc...)
+<!--
+DPG Standard Indicator 3 (Clear Ownership) and supports Tier 3-4 maturity.
+A DPG needs documented ownership and decision-making. Fill in the prompts. Right-size to
+your project: a small project can keep this short, but ownership and decision-making must
+be unambiguous.
 -->
 
-This project is governed by our [Community Guidelines](COMMUNITY.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
+**Project:** {{ cookiecutter.project_name }}
+
+## Ownership
+
+- Who owns this project (organization or individual): {{ cookiecutter.project_org }}
+- Type of owning organization (government, non-profit, company, individual, foundation): …
+- Country of legal establishment: …
+- Copyright / trademark / terms-of-service references: …
+- If the project includes code, content, or data you do not solely own, the basis for redistribution (license, grant, agreement): …
+
+## Decision-making
+
+- How decisions are made (maintainer consensus, voting, BDFL, steering committee): …
+- Who has merge/release authority: …
+- How disagreements are resolved: …
+
+## Roles
+
+See [COMMUNITY.md](COMMUNITY.md) for the current people. Define the roles here:
+
+- **Maintainers** — …
+- **Reviewers / Approvers** — …
+- **Contributors** — …
+
+## Becoming a maintainer
+
+- Path from contributor to maintainer: …
+
+## Escalation & do-no-harm
+
+- How to raise a conduct, privacy, security, or safety concern: …
+- Who is responsible for privacy/data decisions, content moderation (if applicable), and user-safety decisions: …  *(supports DPG Indicators 7 and 9A–9C; see [PRIVACY.md](PRIVACY.md), [SECURITY.md](SECURITY.md), and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md))*
+
+This project is also governed by our [Community Guidelines](COMMUNITY.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
+
+---
+*Reference: [DPG Standard](https://www.digitalpublicgoods.net/standard) Indicator 3.*

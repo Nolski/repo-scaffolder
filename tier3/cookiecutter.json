@@ -4,17 +4,53 @@
   "project_org": "UNDP",
   "project_repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "project_description": "This is the project description, could match github.com repo description.",
+  "project_type": [
+    "software",
+    "content",
+    "data"
+  ],
+  "license": [
+    "MIT",
+    "Apache-2.0",
+    "GPL-3.0",
+    "AGPL-3.0",
+    "MPL-2.0",
+    "BSD-3-Clause",
+    "CC-BY-4.0",
+    "CC-BY-SA-4.0",
+    "CC0-1.0",
+    "ODbL-1.0",
+    "Other"
+  ],
   "code_owners": "",
-  "project_visibility": ["public", "internal", "private"],
-  "create_repo": [true, false],
-  "receive_updates": [true, false],
-  "add_team": [true, false],
-  "add_maintainer": [true, false],
+  "project_visibility": [
+    "public",
+    "internal",
+    "private"
+  ],
+  "create_repo": [
+    true,
+    false
+  ],
+  "receive_updates": [
+    true,
+    false
+  ],
+  "add_team": [
+    true,
+    false
+  ],
+  "add_maintainer": [
+    true,
+    false
+  ],
   "__prompts__": {
     "code_owners": "Would you like to add a CODEOWNERS.md to get notified on repository updates? If so, please provide the usernames separated by commas.",
     "create_repo": "Would you like to create a repo on github.com?",
-    "receive_updates": "Would you like to receive updates from the DSACMS team via pull requests?",
+    "receive_updates": "Would you like to receive upstream template updates via pull requests?",
     "add_team": "Would you like to add project team members to COMMUNITY.md?",
-    "add_maintainer": "Would you like to add maintainers, approvers, and/or reviewers to COMMUNITY.md?"
+    "add_maintainer": "Would you like to add maintainers, approvers, and/or reviewers to COMMUNITY.md?",
+    "project_type": "Is this project software (code), content, or data? (Determines which open licenses are valid for DPG Indicator 2.)",
+    "license": "Which open license? Software must use an OSI license (MIT/Apache-2.0/GPL-3.0/...); content uses Creative Commons; data uses an Open Definition license. CC0 is NOT valid for software. See maturity/licenses.json."
   }
 }

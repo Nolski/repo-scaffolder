@@ -1,16 +1,40 @@
-# Maturity Model Tiers
+# Maturity Model Tiers — DPG Readiness
 
 ![Maturity Model Tier Summary](./assets/images/maturity-model-trees-graphic-horizontal.png)
 
-Our maturity model framework is designed to evaluate and categorize open source repositories based on its level of maturity and development. This framework consists of five tiers (0-4), each representing different stages of a project's maturity, collaboration scope, community engagement, and governance structure.
+> **Source of truth:** the authoritative, re-anchored model lives in
+> [`maturity/tier-model.md`](./maturity/tier-model.md) (the tier ladder) and
+> [`maturity/indicators.md`](./maturity/indicators.md) (the 9 DPG Standard
+> indicators and how each is assessed/remediated). This page is a human-readable
+> summary plus the file-and-section requirements for each tier. Where the two
+> disagree, `maturity/tier-model.md` wins.
 
-- [Tier 0](./tier0/README.md): Private Repository
-- [Tier 1](./tier1/README.md): One-Time Release
-- [Tier 2](./tier2/README.md): Close Collaboration
-- [Tier 3](./tier3/README.md): Working in Public
-- [Tier 4](./tier4/README.md): Community Governance
+This maturity model evaluates and categorizes open source repositories by their
+**distance to Digital Public Good (DPG) eligibility**. Rather than scoring
+collaboration scope, the tiers measure how many of the nine
+[DPG Standard](https://www.digitalpublicgoods.net/standard) indicators a
+repository satisfies. Indicators accumulate as you climb, and the terminal state
+is exactly DPG eligibility:
 
-Different projects have varying needs based on their scope, team size, and community involvement. The framework establishes clear requirements for documentation, collaboration, and governance, ranging from small private repositories (Tier 0) to fully community-governed projects (Tier 4). Each tier has specific mandatory, recommended, and not recommended elements that help guide projects based on the stage of their open source development journey.
+> **Tier 4 ≡ all 9 DPG indicators met → eligible to nominate to the
+> [DPG Registry](https://www.digitalpublicgoods.net/registry).**
+
+The framework consists of five tiers (0-4), each introducing additional DPG
+indicators as **mandatory** and establishing clear requirements for
+documentation, governance, and do-no-harm safeguards.
+
+- [Tier 0](./tier0/README.md): Private / Prototype
+- [Tier 1](./tier1/README.md): Public Release
+- [Tier 2](./tier2/README.md): Maintained & Mission-Aligned
+- [Tier 3](./tier3/README.md): Open & Safe
+- [Tier 4](./tier4/README.md): DPG-Ready / Eligible
+
+A tier is **achieved** when every indicator mandatory at that tier *and all lower
+tiers* is met (or not-applicable). A project's current tier is the highest fully
+achieved tier; its target is the next tier up, and the gap report lists exactly
+the indicators blocking promotion. See
+[`maturity/tier-model.md`](./maturity/tier-model.md) for the classification
+algorithm used by the `dpg-assess` tooling.
 
 ## Tier Definitions
 
@@ -19,47 +43,65 @@ Different projects have varying needs based on their scope, team size, and commu
     <tr>
       <th>Level</th>
       <th>Name</th>
-      <th>Purpose</th>
-      <th>Description</th>
+      <th>Theme</th>
+      <th>Indicators that become mandatory at this tier</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Tier 0</td>
-      <td>Private Repository</td>
-      <td>Experimental/Historical</td>
-      <td>Project is private, usually with a single developer. Typically working projects, example code, and early prototypes.</td>
+      <td>Private / Prototype</td>
+      <td>Internal, experimental</td>
+      <td>None — internal. Typically working projects, example code, and early prototypes with a single developer.</td>
     </tr>
     <tr>
       <td>Tier 1</td>
-      <td>One-Time Release</td>
-      <td>Informational/Historical</td>
-      <td>Project released publicly, but without planned future activity or maintenance from original author(s).</td>
+      <td>Public Release</td>
+      <td>Legally open &amp; attributable</td>
+      <td><strong>2</strong> approved open license · <strong>3</strong> clear ownership · <strong>5</strong> documentation (basic). The project is released publicly with a valid open license and clear ownership.</td>
     </tr>
     <tr>
       <td>Tier 2</td>
-      <td>Close Collaboration</td>
-      <td>Collaborate with smaller, mostly internal teams</td>
-      <td>Project within a team or Operational Division (OpDiv), Internal Repo for Innersource-style work.</td>
+      <td>Maintained &amp; Mission-Aligned</td>
+      <td>Sustained, purposeful</td>
+      <td><strong>1</strong> SDG relevance · <strong>5</strong> documentation (full) · <strong>8</strong> standards/best-practices entry (Principles for Digital Development + OpenSSF Best Practices Badge <em>passing</em>).</td>
     </tr>
     <tr>
       <td>Tier 3</td>
-      <td>Working in Public</td>
-      <td>Collaborate in the Open with smaller, semi-open teams</td>
-      <td>Project developed Open Source by CMS or a CMS contractor, public website hosted on GitHub, tool or utility used in CMS official business by the public. Limited external contribution, CMS-led (by choice or by statute).</td>
+      <td>Open &amp; Safe</td>
+      <td>Working in public, do-no-harm</td>
+      <td><strong>4</strong> platform independence · <strong>6</strong> non-PII data extraction · <strong>7</strong> privacy &amp; applicable laws · <strong>9A</strong> data privacy &amp; security.</td>
     </tr>
     <tr>
       <td>Tier 4</td>
-      <td>Community Governance</td>
-      <td>Collaborate broadly in public</td>
-      <td>Project donated to or stewarded by an external community, open standard that welcomes public input, mature open source project that purposefully develops an open governance structure.</td>
+      <td>DPG-Ready / Eligible</td>
+      <td>Meets the full DPG Standard</td>
+      <td><strong>8</strong> full · <strong>9B</strong> inappropriate/illegal content · <strong>9C</strong> harassment protection → all 9 indicators met → eligible to nominate to the DPG Registry.</td>
     </tr>
   </tbody>
 </table>
 
+The nine indicators referenced above are defined in
+[`maturity/indicators.md`](./maturity/indicators.md): (1) SDG relevance,
+(2) approved open license, (3) clear ownership, (4) platform independence,
+(5) documentation, (6) mechanism for extracting non-PII data, (7) adherence to
+privacy & applicable laws, (8) adherence to standards & best practices, and
+(9) do-no-harm by design (9A data privacy & security, 9B inappropriate/illegal
+content, 9C protection from harassment).
+
+### Interoperability with the DPGA maturity tool
+
+This ladder is intentionally compatible with the DPGA's own
+[7-pillar maturity tool](https://maturity.digitalpublicgoods.net/) (Governance;
+Security & Privacy; Open Standards; Product Roadmap; Source Code; Total Cost;
+Composability). The terminal state (Tier 4) is defined to be exactly DPG
+eligibility — not a separate bar.
+
 ### Determining a project's maturity model tier
 
-Use the series of questions below to identify your project's maturity model tier
+Use the series of questions below to identify your project's maturity model tier,
+or run `dpg-assess` to classify the repository automatically against the nine
+indicators.
 
 ![Tier Selection Flowchart](./assets/images/flowchart.png)
 
@@ -78,7 +120,7 @@ Each tier requires certain files that must be included in the repository.
 | File                                                                           | Tier 0                                 | Tier 1                                 | Tier 2                                 | Tier 3                            | Tier 4                            |
 | ------------------------------------------------------------------------------ | -------------------------------------- | -------------------------------------- | -------------------------------------- | --------------------------------- | --------------------------------- |
 | LICENSE                                                                        | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$ | $\color{green}\large{\textsf{M}}$ |
-| [code.json](https://github.com/nolski/gov-codejson/blob/main/docs/metadata.md) | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$ | $\color{green}\large{\textsf{M}}$ |
+| PRIVACY.md                                                                     | $\color{lightcoral}\large{\textsf{N}}$ | $\color{lightcoral}\large{\textsf{N}}$ | $\color{blue}\large{\textsf{R}}$       | $\color{green}\large{\textsf{M}}$ | $\color{green}\large{\textsf{M}}$ |
 | README.md                                                                      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$ | $\color{green}\large{\textsf{M}}$ |
 | COMMUNITY.md                                                                   | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$ | $\color{green}\large{\textsf{M}}$ |
 | SECURITY.md                                                                    | $\color{blue}\large{\textsf{R}}$       | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$      | $\color{green}\large{\textsf{M}}$ | $\color{green}\large{\textsf{M}}$ |
@@ -112,17 +154,17 @@ Each tier outlines specific content that are required or recommended to be inclu
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>All repositories, whether private or public, must include authorship and copyright information. By default, work done by federal employees is not subject to copyright protections under Title 17 U.S. Code Sections 101 & 105, unless for security or contracting purposes.</td>
+      <td>All repositories, whether private or public, must include authorship and copyright information and an approved open license (DPG indicator 2). Use an OSI-approved license for software, a Creative Commons license for content, or an Open Definition license for data. Never default software to CC0.</td>
     </tr>
         <tr>
-      <td>code.json</td>
-      <td><a href="https://github.com/nolski/gov-codejson/blob/main/schemas">Metadata</a></td>
+      <td>PRIVACY.md</td>
+      <td>Privacy &amp; Data Handling</td>
+      <td>$\color{lightcoral}\large{\textsf{N}}$</td>
+      <td>$\color{lightcoral}\large{\textsf{N}}$</td>
+      <td>$\color{blue}\large{\textsf{R}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>All repositories, whether private or public, must include a code.json file containing project metadata. For more information, visit the <a href="https://github.com/nolski/gov-codejson">code.json documentation repository</a>.</td>
+      <td>Projects that collect, store, or distribute data should document how privacy and applicable laws (e.g. GDPR, regional privacy law) are addressed (DPG indicators 7 and 9A). If PII is handled, demonstrate privacy, security, integrity, and adverse-impact prevention.</td>
     </tr>
     <tr>
       <td rowspan="20">README.md</td>
@@ -166,13 +208,13 @@ Each tier outlines specific content that are required or recommended to be inclu
     </tr>
     <tr>
       <!-- <td>README.md</td> -->
-      <td>Agency Mission</td>
+      <td>Organization Mission</td>
       <td>$\color{blue}\large{\textsf{R}}$</td>
       <td>$\color{blue}\large{\textsf{R}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{blue}\large{\textsf{R}}$</td>
       <td>$\color{lightcoral}\large{\textsf{N}}$</td>
-      <td>Agency-led projects should include information about their agency mission. This should be taken directly from agency websites or wikis.</td>
+      <td>Organization-led projects should include information about the sponsoring organization's mission. This supports clear ownership (DPG indicator 3) by identifying the owning/maintaining organization.</td>
     </tr>
     <tr>
       <!-- <td>README.md</td> -->
@@ -182,7 +224,7 @@ Each tier outlines specific content that are required or recommended to be inclu
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{blue}\large{\textsf{R}}$</td>
       <td>$\color{lightcoral}\large{\textsf{N}}$</td>
-      <td>Agency-led projects should include information about the team executing on the mission. This should be taken directly from internal team charters and functional statements.</td>
+      <td>Organization-led projects should include information about the team executing on the mission. This can be taken from internal team charters and functional statements.</td>
     </tr>
     <tr>
       <!-- <td>README.md</td> -->
@@ -302,27 +344,37 @@ Each tier outlines specific content that are required or recommended to be inclu
       <td>$\color{blue}\large{\textsf{R}}$</td>
       <td>$\color{blue}\large{\textsf{R}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>Even for early-tier projects, this documentation can be extremely valuable. Good candidate content includes any project-specific acronyms (esp applicable for Government projects) and any critical Subject Matter Expertise related vocabulary for people who are new to the domain your project is within.</td>
+      <td>Even for early-tier projects, this documentation can be extremely valuable. Good candidate content includes any project-specific acronyms and any critical Subject Matter Expertise related vocabulary for people who are new to the domain your project is within.</td>
     </tr>
     <tr>
       <!-- <td>README.md</td> -->
-      <td>Policies</td>
+      <td>Standards &amp; Policies</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>This section is to explicitly link to Federal policies and guidelines that are required or recommended for Federal projects to comply with, such as  Accessibility (508) Interoperability, Anti-deficiency, Security, Licensing, and other policies that can vary between agencies and domains.</td>
+      <td>This section links to the standards, best practices, and policies the project adheres to (DPG indicator 8), such as accessibility (WCAG 2.1 AA), interoperability/open standards, security, privacy, and licensing. Referencing the <a href="https://digitalprinciples.org/">Principles for Digital Development</a> is recommended.</td>
     </tr>
     <tr>
       <!-- <td>README.md</td> -->
-      <td>Public Domain</td>
+      <td>SDG Relevance</td>
+      <td>$\color{blue}\large{\textsf{R}}$</td>
+      <td>$\color{blue}\large{\textsf{R}}$</td>
+      <td>$\color{green}\large{\textsf{M}}$</td>
+      <td>$\color{green}\large{\textsf{M}}$</td>
+      <td>$\color{green}\large{\textsf{M}}$</td>
+      <td>Demonstrate relevance to one or more of the 17 Sustainable Development Goals, linking to specific SDG targets (DPG indicator 1). This is a gating indicator for DPG eligibility.</td>
+    </tr>
+    <tr>
+      <!-- <td>README.md</td> -->
+      <td>License</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>A best practice is to list the LICENSE under which a project is released at the bottom of the README. In most cases for Federal repos, we default to Creative Commons Zero 1.0 International (world-wide public domain).</td>
+      <td>A best practice is to list the LICENSE under which a project is released at the bottom of the README (DPG indicator 2). Use an OSI-approved license for software, a Creative Commons license for content, or an Open Definition license for data. Avoid defaulting software to CC0.</td>
     </tr>
         <tr>
       <td rowspan="10">COMMUNITY.md</td>
@@ -402,7 +454,7 @@ Each tier outlines specific content that are required or recommended to be inclu
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>This section communicates to prospective contributors and users what the values of your community are. The examples provided in the template were established by the Justice40 project at USDS.</td>
+      <td>This section communicates to prospective contributors and users what the values of your community are.</td>
     </tr>
     <tr>
       <!-- <td>COMMUNITY.md</td> -->
@@ -422,7 +474,7 @@ Each tier outlines specific content that are required or recommended to be inclu
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>This section recognizes previous work and best practices established by the other members of the federal open source community such as USDS, GSA, 18F, and the Justice40 Project.</td>
+      <td>This section recognizes previous work and best practices the project builds on, such as the CMS/DSACMS OSPO templates this scaffolder was adapted from and the Digital Public Goods Standard.</td>
     </tr>
     <tr>
       <td>SECURITY.md</td>
@@ -566,23 +618,23 @@ Each tier outlines specific content that are required or recommended to be inclu
     </tr>
     <tr>
       <!-- <td>CONTRIBUTING.md</td> -->
-      <td>Policies</td>
+      <td>Standards &amp; Policies</td>
       <td>$\color{blue}\large{\textsf{R}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>This section is here to explicitly link to Federal policies and guidelines that are required or recommended for Federal projects to comply with, such as Accessibility (508) Interoperability, Anti-deficiency, Security, Licensing, and other policies that can vary between agencies and domains.</td>
+      <td>This section links to the standards, best practices, and policies contributors should follow (DPG indicator 8), such as accessibility (WCAG 2.1 AA), interoperability/open standards, security, privacy, and licensing.</td>
     </tr>
     <tr>
       <!-- <td>CONTRIBUTING.md</td> -->
-      <td>Public Domain</td>
+      <td>License</td>
       <td>$\color{blue}\large{\textsf{R}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>This section is to explicitly link to Federal policies and guidelines that are required or recommended for Federal projects to comply with, such as Accessibility (508) Interoperability, Anti-deficiency, Security, Licensing, and other policies that can vary between agencies and domains.</td>
+      <td>State the license under which contributions are accepted (DPG indicator 2) and confirm that contributors agree their submissions are released under the project's license.</td>
     </tr>
     <tr>
       <td rowspan="2">CODE_OF_CONDUCT.md</td>
@@ -602,7 +654,7 @@ Each tier outlines specific content that are required or recommended to be inclu
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
       <td>$\color{green}\large{\textsf{M}}$</td>
-      <td>This section recognizes previous work and best practices established by the other members of the federal open source community such as USDS, GSA, 18F, and the Justice40 Project.</td>
+      <td>This section recognizes previous work and best practices the project builds on, such as the CMS/DSACMS OSPO templates this scaffolder was adapted from and the Digital Public Goods Standard.</td>
     </tr>
     <tr>
       <td>GOVERNANCE.md</td>

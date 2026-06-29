@@ -1,0 +1,22 @@
+name: Secret Scanning (TruffleHog)
+# Helps satisfy DPG Standard Indicator 9A (Data Privacy & Security) by detecting
+# committed secrets / credentials. Complements gitleaks.
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+jobs:
+  trufflehog:
+    name: Scan for verified secrets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: TruffleHog OSS
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          extra_args: --results=verified,unknown

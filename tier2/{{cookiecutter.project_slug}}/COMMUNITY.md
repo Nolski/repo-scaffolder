@@ -108,4 +108,4 @@ When participating in {{ cookiecutter.project_name }} open source community conv
 
 ### Acknowledgements
 
-The Community Guidelines sections were originally forked from the [United States Digital Service](https://usds.gov) [Justice40](https://thejustice40.com) open source [repository](https://github.com/usds/justice40-tool), and we would like to acknowledge and thank the community for their contributions.
+These community guidelines were adapted from the CMS/DSACMS open-source templates (originally drawing on the Justice40 project) and aligned with the [DPG Standard](https://www.digitalpublicgoods.net/standard). We thank those communities for their contributions.

@@ -73,26 +73,14 @@ This project uses **continuous deployment** using [Github Actions](https://githu
 Pull-requests are merged to `main` and the changes are immediately deployed to the development environment. Releases are created to push changes to production.
 -->
 
-## Policies
+## License
 
-### Open Source Policy
+This project is released under the license declared in [LICENSE](LICENSE). Choose an
+approved open license appropriate to your project type (an [OSI-approved](https://opensource.org/licenses)
+license for software; a Creative Commons or [Open Definition](https://opendefinition.org/)
+license for content or data). By contributing, you agree your contributions are released
+under that license.
 
-We adhere to the [CMS Open Source Policy](https://github.com/CMSGov/cms-open-source-policy). If you have any questions, just [shoot us an email](mailto:opensource@cms.hhs.gov).
-
-### Security and Responsible Disclosure Policy
-
-_Submit a vulnerability:_ Vulnerability reports can be submitted through [Bugcrowd](https://bugcrowd.com/cms-vdp). Reports may be submitted anonymously. If you share contact information, we will acknowledge receipt of your report within 3 business days.
-
-### Software Bill of Materials (SBOM)
-
-A Software Bill of Materials (SBOM) is a formal record containing the details and supply chain relationships of various components used in building software.
-
-In the spirit of [Executive Order 14028 - Improving the Nation's Cyber Security](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/information-technology-category/it-security/executive-order-14028), a SBOM for this repository is provided here: https://github.com/{{ cookiecutter.project_org }}/{{ cookiecutter.project_repo_name }}/network/dependencies.
-
-For more information and resources about SBOMs, visit: https://www.cisa.gov/sbom.
-
-## Public domain
-
-This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/) as indicated in [LICENSE](LICENSE).
-
-All contributions to this project will be released under the CC0 dedication. By submitting a pull request or issue, you are agreeing to comply with this waiver of copyright interest.
+<!-- This is a Tier 0 (private / prototype) scaffold. As the project matures toward a
+public release and Digital Public Good readiness, higher tiers add the documentation,
+privacy, governance, and do-no-harm sections required by the DPG Standard. -->

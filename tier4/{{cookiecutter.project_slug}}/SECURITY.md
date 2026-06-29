@@ -1,12 +1,30 @@
 # Security and Responsible Disclosure Policy
 
-The Centers for Medicare & Medicaid Services is committed to ensuring the security of the American public by protecting their information from unwarranted disclosure. We want security researchers to feel comfortable reporting vulnerabilities they have discovered so we can fix them and keep our users safe. We developed our disclosure policy to reflect our values and uphold our sense of responsibility to security researchers who share their expertise with us in good faith.
+The {{ cookiecutter.project_name }} maintainers are committed to protecting our users and their data. We want security researchers to feel comfortable reporting vulnerabilities they have discovered, in good faith, so we can fix them and keep users safe.
 
-*Submit a vulnerability:* Vulnerability reports can be submitted through [Bugcrowd](https://bugcrowd.com/cms-vdp). Reports may be submitted anonymously. If you share contact information, we will acknowledge receipt of your report within 3 business days.
+## Reporting a vulnerability
 
-Review the HHS Disclosure Policy and websites in scope:
-[https://www.hhs.gov/vulnerability-disclosure-policy/index.html](https://www.hhs.gov/vulnerability-disclosure-policy/index.html).
+Please report suspected vulnerabilities **privately** — do not open a public issue for a security problem.
 
-This policy describes *what systems and types of research* are covered under this
-policy, *how to send* us vulnerability reports, and *how long* we ask security
-researchers to wait before publicly disclosing vulnerabilities.
+- **Preferred:** open a [private security advisory](https://github.com/{{ cookiecutter.project_org }}/{{ cookiecutter.project_repo_name }}/security/advisories/new) on this repository (GitHub will keep it confidential until a fix is published).
+- **Alternative:** email a maintainer (see [COMMUNITY.md](COMMUNITY.md)) or `{{ cookiecutter.project_org }}`.
+- Reports may be submitted anonymously. If you share contact information, we will acknowledge receipt within **3 business days**.
+
+Projects that need a higher-volume intake can also wire up a dedicated disclosure platform (e.g. HackerOne, Bugcrowd, or a security mailbox) and link it here — pick whatever fits your team.
+
+## What to include
+
+- A description of the vulnerability and its impact.
+- Steps to reproduce (proof-of-concept, affected versions, configuration).
+
+## Responsible disclosure
+
+We ask that you give us a reasonable window — typically **90 days**, or sooner once a fix ships — to remediate before any public disclosure, and that you avoid privacy violations, data destruction, or service degradation while researching.
+
+## Supply-chain security
+
+We aim to keep dependencies current and to publish a Software Bill of Materials (SBOM) and dependency information for this project. Automated dependency and secret scanning run in CI; see the workflows under `.github/`.
+
+## Data privacy
+
+For how this project collects, stores, and protects personal data — and what to do if you discover a **privacy** concern rather than a security vulnerability — see [PRIVACY.md](PRIVACY.md).

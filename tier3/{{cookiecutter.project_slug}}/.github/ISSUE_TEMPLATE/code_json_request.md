@@ -34,10 +34,10 @@ Thank you for helping maintain accurate code.json information for this project! 
 - [ ] localisation
 - [ ] repositoryType
 - [ ] userInput
-- [ ] fismaLevel
 - [ ] group
-- [ ] subsetInHealthcare
-- [ ] userType
+- [ ] dpgType
+- [ ] dpgStage
+- [ ] sdgs
 - [ ] repositoryHost
 - [ ] maturityModelTier
 - [ ] Other (please specify below)
@@ -56,5 +56,5 @@ Thank you for helping maintain accurate code.json information for this project! 
 
 ### Helpful Resources
 
-- [Generate your code.json entry](https://dsacms.github.io/codejson-generator/) - Use this form to generate a valid code.json
-- [code.json Guidance](https://github.com/nolski/gov-codejson/tree/main/docs) - Documentation on code.json 
+- [DPG Standard](https://www.digitalpublicgoods.net/standard) - The 9 indicators this metadata supports
+- [DPG nominee schema](../../../maturity/nominee-schema.json) - The DPG metadata model used by this project

@@ -71,11 +71,11 @@ Pull-requests are merged to `main` and the changes are immediately deployed to t
 
 ## Contributing
 
-Thank you for considering contributing to an Open Source project of the US Government! For more information about our contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
+Thank you for considering contributing to this open source project! For more information about our contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Community
 
-The {{ cookiecutter.project_name }} team is taking a community-first and open source approach to the product development of this tool. We believe government software should be made in the open and be built and licensed such that anyone can download the code, run it themselves without paying money to third parties or using proprietary software, and use it as they will.
+The {{ cookiecutter.project_name }} team is taking a community-first and open source approach to the product development of this tool. We believe software in the public interest should be made in the open and be built and licensed such that anyone can download the code, run it themselves without paying money to third parties or using proprietary software, and use it as they will.
 
 We know that we can learn from a wide variety of communities, including those who will use or will be impacted by the tool, who are experts in technology, or who have experience with similar technologies deployed in other spaces. We are dedicated to creating forums for continuous conversation and feedback to help shape the design and development of the tool.
 
@@ -99,30 +99,79 @@ If you have ideas for how we can improve or add to our capacity building efforts
 Information about terminology and acronyms used in this documentation may be found in [GLOSSARY.md](GLOSSARY.md).
 -->
 
+<!-- DPG Standard Indicator 1 (Relevance to the SDGs). Link to specific targets. -->
+
+## Relevance to the Sustainable Development Goals
+
+{{ cookiecutter.project_name }} advances the following UN Sustainable Development Goals:
+
+| SDG | How this project contributes (link to a specific target) | Evidence |
+|-----|----------------------------------------------------------|----------|
+| SDG _N_ — _Goal name_ | _1–2 sentences linking to a specific target_ | _link to docs / deployment / impact_ |
+
+## Platform Independence & Dependencies
+
+<!-- DPG Standard Indicator 4. A DPG must not be locked to closed components. -->
+
+**Core technologies:** _(languages, frameworks, databases, runtimes)_ …
+
+| Dependency | Open or closed? | If closed: open alternative & migration note |
+|------------|-----------------|----------------------------------------------|
+| … | open / closed | … |
+
+This project can be run without paid or proprietary software: _state that all mandatory
+dependencies are open source, or name the open alternative for each closed dependency._
+
+## Data Export & Portability
+
+<!-- DPG Standard Indicator 6. Include only if the project stores/generates data. -->
+
+Non-personal data/content produced by {{ cookiecutter.project_name }} can be exported in a
+non-proprietary format:
+
+- **Formats supported:** CSV / JSON / XML / … (no proprietary-only formats)
+- **How to export / import:** _(UI path, CLI command, or API endpoint)_
+
+Personal-data export and handling are covered in [PRIVACY.md](PRIVACY.md).
+
+## Ownership & Governance
+
+- **Owner:** {{ cookiecutter.project_org }} _(type + country of legal establishment)_
+- Decision-making, roles, and escalation are documented in [GOVERNANCE.md](GOVERNANCE.md).
+
+## Standards & Best Practices
+
+This project aims to follow the [Principles for Digital Development](https://digitalprinciples.org/),
+works toward the [OpenSSF Best Practices Badge](https://www.bestpractices.dev/), and runs
+CI, dependency review, and secret scanning in `.github/`.
+
 ## Policies
 
-### Open Source Policy
+### Privacy & Applicable Laws
 
-We adhere to the [CMS Open Source
-Policy](https://github.com/CMSGov/cms-open-source-policy). If you have any
-questions, just [shoot us an email](mailto:opensource@cms.hhs.gov).
+This project is designed to comply with applicable privacy laws (e.g. GDPR and regional
+data-protection law). How we handle personal data is documented in [PRIVACY.md](PRIVACY.md).
 
 ### Security and Responsible Disclosure Policy
 
-_Submit a vulnerability:_ Vulnerability reports can be submitted through [Bugcrowd](https://bugcrowd.com/cms-vdp). Reports may be submitted anonymously. If you share contact information, we will acknowledge receipt of your report within 3 business days.
+We support responsible disclosure of security vulnerabilities. Please report issues
+privately — see [SECURITY.md](SECURITY.md) for how to report and our disclosure window.
 
-For more information about our Security, Vulnerability, and Responsible Disclosure Policies, see [SECURITY.md](SECURITY.md).
+### Supply-chain security
 
-### Software Bill of Materials (SBOM)
+We aim to keep dependencies up to date and to make dependency / Software Bill of Materials
+(SBOM) information available. Automated dependency and secret scanning run in CI.
 
-A Software Bill of Materials (SBOM) is a formal record containing the details and supply chain relationships of various components used in building software.
+### Accessibility
 
-In the spirit of [Executive Order 14028 - Improving the Nation’s Cyber Security](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/information-technology-category/it-security/executive-order-14028), a SBOM for this repository is provided here: https://github.com/{{ cookiecutter.project_org }}/{{ cookiecutter.project_repo_name }}/network/dependencies.
+Where this project has a user interface, we aim to meet [WCAG 2.1 AA](https://www.w3.org/TR/WCAG21/).
 
-For more information and resources about SBOMs, visit: https://www.cisa.gov/sbom.
+## License
 
-## Public domain
+This project is released under the license declared in [LICENSE](LICENSE). Choose an
+approved open license appropriate to your project type — an [OSI-approved](https://opensource.org/licenses)
+license for software; a Creative Commons or [Open Definition](https://opendefinition.org/)
+license for content or data. (Do not apply CC0 to software; CC0 is appropriate for data
+and content only.)
 
-This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/) as indicated in [LICENSE](LICENSE).
-
-All contributions to this project will be released under the CC0 dedication. By submitting a pull request or issue, you are agreeing to comply with this waiver of copyright interest.
+By submitting a contribution, you agree it is released under this project's license.
