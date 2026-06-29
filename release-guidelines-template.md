@@ -131,7 +131,7 @@ For example, if the second Release Candidate for `0.5.0` is being prepared, afte
 ```bash
 git fetch
 git checkout origin/release-0.5.0
-# more commits per OMF review
+# more commits per review feedback
 git tag 0.5.0-rc2
 git push --tags
 ```

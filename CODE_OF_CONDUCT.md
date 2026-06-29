@@ -8,10 +8,10 @@ Examples of unacceptable behavior by participants include the use of sexual lang
 
 Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned with this Code of Conduct.
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening an issue or contacting one or more of the project maintainers at opensource@cms.hhs.gov.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the maintainers (see [COMMUNITY.md](COMMUNITY.md)) or by emailing `opensource@undp.org`. Reports involving the safety of minors or other urgent harms will be prioritized.
 
 This Code of Conduct is adapted from the [Contributor Covenant](http://contributor-covenant.org), version 1.0.0, available at [http://contributor-covenant.org/version/1/0/0/](http://contributor-covenant.org/version/1/0/0/)
 
 ## Acknowledgements
 
-This CODE_OF_CONDUCT.md was originally forked from the [United States Digital Service](https://usds.gov) [Justice40](https://thejustice40.com) open source [repository](https://github.com/usds/justice40-tool), and we would like to acknowledge and thank the community for their contributions.
+This CODE_OF_CONDUCT.md was adapted from the [Contributor Covenant](http://contributor-covenant.org) and from open source community templates developed by the CMS/DSACMS OSPO, and we would like to acknowledge and thank those communities for their contributions.

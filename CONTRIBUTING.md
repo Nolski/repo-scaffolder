@@ -1,13 +1,12 @@
 # How to Contribute
 
-We're so thankful you're considering contributing to an [open source project of
-the U.S. government](https://code.gov/)! If you're unsure about anything, just
-ask -- or submit the issue or pull request anyway. The worst that can happen is
-you'll be politely asked to change something. We appreciate all friendly
-contributions.
+We're so thankful you're considering contributing to this open source project! If
+you're unsure about anything, just ask -- or submit the issue or pull request
+anyway. The worst that can happen is you'll be politely asked to change something.
+We appreciate all friendly contributions.
 
 We encourage you to read this project's CONTRIBUTING policy (you are here), its
-[LICENSE](LICENSE.md), and its [README](README.md).
+[LICENSE](LICENSE), and its [README](README.md).
 
 ## Getting Started
 
@@ -16,10 +15,10 @@ First, install the required dependencies.
 To create a new repository using repo-scaffolder, run the production version of repo-scaffolder. Subsitute `X` with the tier number you'd like to create in the directory flag.
 
 ```
-cookiecutter https://github.com/nolski/repo-scaffolder --directory=tierX
+cookiecutter https://github.com/UNDP/repo-scaffolder --directory=tierX
 ```
 
-More commands on using repo-scaffolder for repository creation and maintenance can be found here: https://github.com/nolski/repo-scaffolder/blob/main/README.md#Using-repo-scaffolder
+More commands on using repo-scaffolder for repository creation and maintenance can be found here: https://github.com/UNDP/repo-scaffolder/blob/main/README.md#Using-repo-scaffolder
 
 ### Team Specific Guidelines
 
@@ -32,7 +31,7 @@ More commands on using repo-scaffolder for repository creation and maintenance c
 
 1. Clone the repo
 
-   `git clone https://github.com/nolski/metrics.git`
+   `git clone https://github.com/UNDP/repo-scaffolder.git`
 
 2. Install the required packages in requirements.txt
 
@@ -50,9 +49,9 @@ We follow the [GitHub Flow Workflow](https://guides.github.com/introduction/flow
 2.  Check out the `main` branch
 3.  Create a feature branch
 4.  Write code and tests for your change
-5.  From your branch, make a pull request against `cmsgov/cmsgov-example-repo/main`
+5.  From your branch, make a pull request against the upstream `main` branch
 6.  Work with repo maintainers to get your change reviewed
-7.  Wait for your change to be pulled into `cmsgov/cmsgov-example-repo/main`
+7.  Wait for your change to be pulled into the upstream `main` branch
 8.  Delete your feature branch
 
 ### Testing Conventions
@@ -134,24 +133,29 @@ will be merged directly into the main branch.
 ## Documentation
 
 We also welcome improvements to the project documentation or to the existing
-docs. Please file an [issue](https://github.com/nolski/repo-scaffolder/issues).
+docs. Please file an [issue](https://github.com/UNDP/repo-scaffolder/issues).
 
 ## Policies
 
 ### Open Source Policy
 
-We adhere to the [CMS Open Source
-Policy](https://github.com/CMSGov/cms-open-source-policy). If you have any
-questions, just [shoot us an email](mailto:opensource@cms.hhs.gov).
+This project is developed in the open and aligns with the
+[Principles for Digital Development](https://digitalprinciples.org/) and the
+[Digital Public Goods Standard](https://www.digitalpublicgoods.net/standard). If
+you have any questions, contact the maintainers (see [COMMUNITY.md](COMMUNITY.md))
+or email `opensource@undp.org`.
 
 ### Security and Responsible Disclosure Policy
 
-_Submit a vulnerability:_ Vulnerability reports can be submitted through [Bugcrowd](https://bugcrowd.com/cms-vdp). Reports may be submitted anonymously. If you share contact information, we will acknowledge receipt of your report within 3 business days.
+If you discover a security vulnerability, please report it privately rather than
+opening a public issue. Reports may be submitted anonymously, and we will
+acknowledge receipt within 3 business days if you share contact information.
 
-For more information about our Security, Vulnerability, and Responsible Disclosure Policies, see [SECURITY.md](SECURITY.md).
+For full details on reporting, coordinated disclosure, and our privacy
+commitments, see [SECURITY.md](SECURITY.md).
 
-## Public domain
+## License
 
-This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
-
-All contributions to this project will be released under the CC0 dedication. By submitting a pull request or issue, you are agreeing to comply with this waiver of copyright interest.
+This project is released under the terms of the license in the
+[LICENSE](LICENSE) file. By submitting a pull request or issue, you agree that
+your contributions will be licensed under those same terms.

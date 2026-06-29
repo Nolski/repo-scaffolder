@@ -34,4 +34,4 @@ When participating in the repo-scaffolder open source community conversations an
 
 ## Acknowledgements
 
-This COMMUNITY_GUIDELINES.md was originally forked from the [United States Digital Service](https://usds.gov) [Justice40](https://thejustice40.com) open source [repository](https://github.com/usds/justice40-tool), and we would like to acknowledge and thank the community for their contributions.
+This COMMUNITY_GUIDELINES.md was adapted from open source community templates developed by the CMS/DSACMS OSPO, and we would like to acknowledge and thank that community for their contributions.

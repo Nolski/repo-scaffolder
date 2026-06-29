@@ -2,15 +2,15 @@
 <!-- TODO: Who are the points of contact in your project who are responsible/accountable for the project? This can often be an engineering or design manager or leader, who may or may not be the primary maintainers of the project. 
  Roles to include, but not limited to: Project Owner, Technical Lead, Developers/Contributors, Community Manager, Security Team, Policy Advisor, Contracting Officer's Representative, Compliance Officer, Procurement Officer --> 
 
-repo-scaffolder is supported by a dedicated team of individuals fulfilling various roles to ensure its success, security, and alignment with government standards and agency goals.
+repo-scaffolder is supported by a dedicated team of individuals fulfilling various roles to ensure its success, security, and alignment with the Digital Public Goods Standard.
 
-| Role              | Name              | Affiliation                                    |
-| :---------------- | :---------------- | :--------------------------------------------- |
-| Open Source Lead  | Remy DeCausemaker | OSPO, Digital Service at CMS                   |
-| Software Engineer | Natalia Luzuriaga | OSPO, Digital Service at CMS, US Digital Corps |
-| Software Engineer | Isaac Milarsky    | OSPO, Digital Service at CMS, US Digital Corps |
-| Software Engineer | Dinne Kopelevich  | OSPO, Digital Service at CMS, US Digital Corps |
-| Software Engineer | Sachin Panayil    | OSPO, Digital Service at CMS, US Digital Corps |
+| Role              | Name              | Affiliation |
+| :---------------- | :---------------- | :---------- |
+| Open Source Lead  | Remy DeCausemaker | Maintainer  |
+| Software Engineer | Natalia Luzuriaga | Maintainer  |
+| Software Engineer | Isaac Milarsky    | Maintainer  |
+| Software Engineer | Dinne Kopelevich  | Maintainer  |
+| Software Engineer | Sachin Panayil    | Maintainer  |
 
 ## Roles & Responsibilities
 
@@ -216,4 +216,4 @@ When participating in ospo-guide open source community conversations and spaces,
 
 ### Acknowledgements
 
-The Community Guidelines sections were originally forked from the [United States Digital Service](https://usds.gov) [Justice40](https://thejustice40.com) open source [repository](https://github.com/usds/justice40-tool), and we would like to acknowledge and thank the community for their contributions.
+The Community Guidelines sections were adapted from open source community templates developed by the CMS/DSACMS OSPO, and we would like to acknowledge and thank that community for their contributions.

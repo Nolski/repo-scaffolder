@@ -30,4 +30,4 @@ Thank you [US Digital Response](https://www.usdigitalresponse.org/) Team for you
 
 # Questions?
 
-Email opensource@cms.hhs.gov
+Email `opensource@undp.org`, or contact a maintainer (see [COMMUNITY.md](COMMUNITY.md)).

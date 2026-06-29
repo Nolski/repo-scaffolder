@@ -1,267 +1,101 @@
-# repo-scaffolder
+# repo-scaffolder — DPG Readiness & Compliance Tool
 
-Templates and commandline tools for creating repositories for UNDP open source projects
+Assess any repository's maturity against the **[Digital Public Goods (DPG) Standard](https://www.digitalpublicgoods.net/standard)** and guide it toward becoming a fully DPG-ready open-source project.
 
 ## About the Project
 
-The CMS Open Source Program Office developed a [maturity model framework](https://github.com/UNDP/repo-scaffolder/blob/main/maturity-model-tiers.md) to classify federal open source projects based on their maturity level. This is the basis of the UNDP maturity model that has been altered to fit the context of DPGs being produced within the UN. Each tier outlines specific files and content that are required or recommended to be included in the repository.
+This tool helps open-source projects progress from an early-stage repository to a **Digital Public Good** — open-source software, data, content, AI models, or standards that adhere to privacy and applicable laws, do no harm, and help attain the Sustainable Development Goals (SDGs).
 
-The repo-scaffolder project creates repositories that adhere to open source hygiene standards and best practices. It provides templates and guidance for project metadata, contributing practices, community governance, feedback mechanisms, security policies, and more. Using [cookiecutter](https://github.com/cookiecutter/cookiecutter), repo-scaffolder helps teams identify what tier their project is classified as and fill in project information to be inputted into the file templates. In turn, this provides the project sufficient structure and foundation to promote a healthy open source ecosystem
+It does three things:
 
-This repository also includes [outbound checklists](#Outbound-Checklists) for each tier outlining the review process for releasing repositories as open source.
+1. **Assess** — audit a repository against the DPG Standard's 9 indicators and classify its maturity tier (0–4), using open-source tooling (license, security, secrets, documentation checks).
+2. **Remediate** — close the gaps that block the next tier, scaffolding the missing DPG-grade artifacts (privacy policy, governance, content-moderation policy, SDG mapping, an approved open license, and more).
+3. **Scaffold** — for brand-new projects, generate a repository that starts DPG-ready at a chosen maturity tier.
 
-For existing repositories, repolinter via GitHub Actions is used to identify any files and information missing from the repository according to their maturity tier.
+The maturity model is a re-anchored version of the [CMS/DSACMS OSPO](https://github.com/DSACMS/repo-scaffolder) framework this scaffolder was adapted from: instead of measuring *collaboration scope*, the tiers now measure **distance to DPG eligibility**, where **Tier 4 ≡ all 9 indicators met → eligible to nominate to the [DPG Registry](https://www.digitalpublicgoods.net/registry)**.
 
-<!-- TODO: Include more information on outbound checklists -->
+## How it works — Claude skills
 
-<!---
-### Project Vision
-**{project vision}** -->
+The primary interface is a set of [Claude Code](https://claude.com/claude-code) skills (in `.claude/skills/`). When you open this repo in Claude Code, they're available automatically:
 
-<!--
-### Project Mission
-**{project mission}** -->
+| Skill | Use it to… |
+|---|---|
+| **`dpg-assess`** | Audit any repo, score the 9 indicators, and get a tier classification + indicator-by-indicator gap report (`dpg-assessment.json`). |
+| **`dpg-remediate`** | Close the gaps — instantiate the missing DPG artifacts, fix the license, and at Tier 4 produce a pre-filled DPG nominee package for submission. |
+| **`dpg-scaffold`** | Bootstrap a brand-new repo at a chosen tier (wraps cookiecutter). |
 
-<!--
-### Agency Mission
-TODO: Good to include since this is an agency-led project -->
+Typical flow: **assess → remediate → re-assess**, repeating until the repo reaches Tier 4 and is ready to nominate at <https://app.digitalpublicgoods.net>.
 
-<!--
-### Team Mission
-TODO: Good to include since this is an agency-led project -->
+## Repository structure
 
-## Core Team
+| Path | What it is |
+|---|---|
+| [`maturity/`](./maturity) | The knowledge core: `indicators.md` (the 9 DPG indicators + how each is detected/remediated), `tier-model.md` (the tier ladder), `nominee-schema.json` (DPG output data model), `licenses.json` (approved-license allow-lists). |
+| [`scripts/audit/`](./scripts/audit) | `run_audit.py` — the open-source audit engine (license, security, secrets, docs, file/section presence) that produces the evidence the skills reason over. |
+| [`templates/`](./templates) | DPG-grade artifacts the remediation skill drops into a repo (PRIVACY.md, CONTENT_MODERATION.md, SDG mapping, governance, …). |
+| [`tier0/`–`tier4/`](./tier0) | Cookiecutter templates for greenfield scaffolding, one per maturity tier. |
+| [`.claude/skills/`](./.claude/skills) | The three DPG skills. |
+| [`transition/`](./transition) | Background research and the transition assessment that shaped this tool. |
+| [`maturity-model-tiers.md`](./maturity-model-tiers.md) | Human-readable overview of the tier model + file requirements per tier. |
 
-A list of core team members responsible for the code and documentation in this repository can be found in [COMMUNITY.md](COMMUNITY.md).
+## The 9 DPG indicators
 
-## Repository Structure
+1. Relevance to the SDGs · 2. Approved open license · 3. Clear ownership · 4. Platform independence · 5. Documentation · 6. Mechanism for extracting (non-PII) data · 7. Privacy & applicable laws · 8. Standards & best practices · 9. Do no harm by design (9A data privacy & security, 9B inappropriate/illegal content, 9C protection from harassment).
 
-##### Usage
+See [`maturity/indicators.md`](./maturity/indicators.md) for the full requirements, evidence, and detection logic.
 
-- [Using repo-scaffolder](#Using-repo-scaffolder)
-- [Updating repositories using GitHub Actions](#Updating-projects-with-new-repo-scaffolder-upstream-file-changes)
-- [Documentation](./docs)
+`dpg-assess` also runs an **advisory [software-architecture assessment](./maturity/architecture.md)** — 12 dimensions (modularity, API-first, cloud-agnosticism, offline resilience, accessibility/i18n, security architecture, data portability, testing/CI, observability, docs, maintainability) especially relevant to **web apps** becoming DPGs. It's diagnostic only and does not change the DPG tier.
 
-##### Maturity Models
+## Using the audit engine directly (no Claude required)
 
-- [Maturity Model Framework](./maturity-model-tiers.md)
-- [Tier 0](./tier0/README.md)
-- [Tier 1](./tier1/README.md)
-- [Tier 2](./tier2/README.md)
-- [Tier 3](./tier3/README.md)
-- [Tier 4](./tier4/README.md)
-
-##### Outbound Checklists
-
-- [Tier 1](./tier1/checklist.md)
-- [Tier 2](./tier2/checklist.md)
-- [Tier 3](./tier3/checklist.md)
-- [Tier 4](./tier4/checklist.md)
-
-##### Files
-
-- [CONTRIBUTING.md](./CONTRIBUTING.md)
-- [COMMUNITY.md](./COMMUNITY.md)
-- [CODEOWNERS.md](./CODEOWNERS.md)
-- [COMMUNITY_GUIDELINES.md](./COMMUNITY_GUIDELINES.md)
-- [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
-- [SECURITY.md](./SECURITY.md)
-- [LICENSE](./LICENSE)
-
-## Using repo-scaffolder
-
-### Create a new repository using repo-scaffolder
-
-The Open Source Program Office follows a maturity model framework to classify federal repositories according to their level of maturity: https://github.com/UNDP/repo-scaffolder/blob/main/maturity-model-tiers.md.
-
-There are 4 tiers in the maturity model framework. The `/tier*` directory consists of templates, files, and scripts for each respective tier:
-
-- `{{cookiecutter.project_slug}}` is the directory containing templates and files to be generated upon repository creation. This serves as your repository starting point.
-- `cookiecutter.json` defining the questions cookiecutter asks.
-- `hooks`, a folder containing scripts to be run upon repository creation.
-- `checklist.md` & `checklist.pdf` is the outbound review checklist with guidelines on releasing the repository as open source.
-- `README.md` with more information about the maturity tier and file contents.
-
-#### Prerequisites
-
-- python
-- github cli
-- [cookiecutter](https://github.com/cookiecutter/cookiecutter)
-- [repolinter](https://github.com/todogroup/repolinter)
-
-##### Installation (On Mac)
-
-```
-python3 -m venv venv
-. venv/bin/activate
-pip install -r requirements.txt
-brew install gh
+```bash
+python3 scripts/audit/run_audit.py <path-to-repo> --type software -o audit-report.json
 ```
 
-#### Need help picking a maturity tier?
+The audit uses only the Python standard library. Optional tools (`licensee`, `gitleaks`, `trufflehog`, OpenSSF `scorecard`, `markdownlint`) enrich the report when installed — see [`scripts/audit/README.md`](./scripts/audit/README.md). Run it locally or through the `dpg-assess` skill; scaffolded repos additionally ship secret-scanning CI (gitleaks + trufflehog) that supports DPG Indicator 9A.
 
-If you do not know what tier your project is, the `tier-determiner.py` script will walk you through questions to figure out what tier you need. Run:
+## Scaffolding a new repository
 
-```
-python tier-determiner.py
-```
+### Prerequisites
 
-You can also follow the flowchart below to determine your project's tier.
-![Tier Selection Flowchart](./assets/images/flowchart.png)
+- Python 3.8+
+- [cookiecutter](https://github.com/cookiecutter/cookiecutter) (`pip install -r requirements.txt`)
+- [GitHub CLI](https://cli.github.com/) (`gh`) — only if you want the hook to create the repo for you
 
-#### Know what maturity tier you need?
+### Pick a tier
 
-If you know what tier you need, you can run the cookiecutter for an individual tier. Use the below command with `X` substituted for the tier number.
+If unsure which tier fits, run the quick estimator:
 
-```
-cookiecutter https://github.com/UNDP/repo-scaffolder --directory=tierX
-```
-
-### Update an existing repository using repo-scaffolder
-
-You can update existing projects with repo-scaffolder. Using the `-s` flag on cookiecutter will not overwrite existing files. Follow these steps:
-
-1. Create a new branch in your repo
-2. cd into folder above
-3. run: `cookiecutter -f -s https://github.com/UNDP/repo-scaffolder --directory=tierX`
-4. Make sure when answering the questions you use the existing folder/project name
-5. Raise pr into main
-
-### Metadata collection using code.json
-
-<!-- TODO: Add text here about code.json and link code.json docs -->
-
-#### Add code.json to your project
-
-Each repository should contain a code.json file with metadata about the project.
-
-To add code.json into your project, navigate to your project's `.github` directory and run the following cookiecutter command. You will be asked questions about the project (see cookiecutter.json) in order to collect and store this metadata in code.json.
-
-```
-cookiecutter . --directory=codejson
+```bash
+python3 tier-determiner.py
 ```
 
-### Maintaining your repository using repo-scaffolder
+For an evidence-based classification of an *existing* repo, use the `dpg-assess` skill instead.
 
-#### Updating repository using GitHub action workflows
+### Generate
 
-The OSPO created various [GitHub Action workflows](../docs/workflows.md) that can be used to regularly update your repository. The jobs are located in `.github` directory of your project.
-
-#### Updating projects with new repo-scaffolder upstream file changes
-
-When creating projects, if you want to receive updates then add `dsacms-tierX` as a github topic to the repo. The scaffolder repo includes github workflows that will find all repos with that tag and can raise a pull request with an updated string or adding a file. See [actions.md](https://github.com/UNDP/repo-scaffolder/blob/main/.github/actions.md) for more information.
-
-### Identify missing files and information using repolinter
-
-Repolinter is a tool maintained by the [TODOGroup](https://todogroup.org/) for checking repositories for common open source issues, using pre-defined rulesets. This can be run stand-alone as a script, pre-commit in your IDE, or post-commit or within CI/CD systems!
-
-✔    =  Pass
-
-✖    =  Fail
-
-⚠  =  Warn
-
-Tiers of level 0 thru 4 have repolinter.json file in their projects. Tier0 has detailed configuration of all the rules. All the other tiers extends their previous tiers and has only the `rule` and the `level` configuration.
-
-Sample commands to run with the given repolinter.json path:
-
-```
-repolinter lint . # Runs on target directory
-
-repolinter lint . --config path/to/repolinter.json # Use if the repolinter config is not in the root dir
-
+```bash
+cookiecutter . --directory=tierX     # X = 0–4
 ```
 
-#### Automated repolinter actions
+You'll be prompted for project details and an **open license**. The license prompt is type-aware: software must use an OSI-approved license; content uses Creative Commons; data uses an Open Definition license. (Unlike the original scaffolder, software is **never** defaulted to CC0 — that is invalid for software under DPG Indicator 2.) Approved lists live in [`maturity/licenses.json`](./maturity/licenses.json).
 
-A tool to automatically update repositories up to hygenic standards with the use of [Repolinter through GitHub Actions](https://github.com/UNDP/repolinter-actions) is also available. This action sends a PR to your repository with templates of all the missing files and sections that are required using a predefined rulset. Visit the repository for more information on how to get this action up and running.
+### Update an existing project
 
-#### Automated Releases and Guidelines
+Use `-f -s` to avoid overwriting existing files:
 
-This tool automatically generates release guidelines and automated workflows that generate changelogs based on the standards that are set within those guidelines.
-
-For instance, semantic versioning is expected and required for the baseline changelog workflow to work in your newly generated project.
-
-More information on release guidelines can be found [here](./release-guidelines-template.md)
-
-# Development and Software Delivery Lifecycle
-
-The following guide is for members of the project team who have access to the repository as well as code contributors. The main difference between internal and external contributions is that external contributors will need to fork the project and will not be able to merge their own pull requests. For more information on contributing, see: [CONTRIBUTING.md](./CONTRIBUTING.md).
-
-## Local Development
-
-This project contains several different features.
-
-- `/tier*` contains file templates for repository creation and metadata collection using cookiecutter. Refer to the README.mds to learn more about the file contents.
-- `/.github` contains GitHub actions to update repositories contents across the ecosystem.
-- `checklist.md` & `checklist.pdf` is the outbound review checklist with guidelines on releasing the repository as open source.
-- `maturity-model-tiers.md` & `maturity-model-tiers.pdf` contain information about our maturity model framework.
-
-### Editing/adding tiers and template contents in repo-scaffolder
-
-At a top level, each tier consists of a folder for `hooks`, a folder containing the files to be added (`{{cookiecutter.project_slug}}`), and a `cookiecutter.json` defining the questions cookiecutter asks. These naming conventions must be followed as that is what cookiecutter picks up. The `hooks` folder needs to be duplicated in each tier. The folder containing the files to be added can include slugged out variables such as `{{ cookiecutter.project_name }}` that can be filled in by the answers to `cookiecutter.json`.
-For example, `{{ cookiecutter.project_name }}` will be filled in by this question - `"project_name": "My Project",`.
-
-See the [cookiecutter docs](https://cookiecutter.readthedocs.io/en/stable/)
-for more information.
-
-<!-- TODO: Add guidance on updating repolinter -->
-
-## Coding Style and Linters
-
-<!-- TODO - Add the repo's linting and code style guidelines -->
-
-Each application has its own linting and testing guidelines. Lint and code tests are run on each commit, so linters and tests should be run locally before commiting.
-
-## Branching Model
-
-This project follows [trunk-based development](https://trunkbaseddevelopment.com/), which means:
-
-- Make small changes in [short-lived feature branches](https://trunkbaseddevelopment.com/short-lived-feature-branches/) and merge to `dev` frequently.
-- Be open to submitting multiple small pull requests for a single ticket (i.e. reference the same ticket across multiple pull requests).
-- Treat each change you merge to `dev` as immediately deployable to production. Do not merge changes that depend on subsequent changes you plan to make, even if you plan to make those changes shortly.
-- Ticket any unfinished or partially finished work.
-- Tests should be written for changes introduced, and adhere to the text percentage threshold determined by the project.
-
-This project uses **continuous deployment** using [Github Actions](https://github.com/features/actions) which is configured in the [./github/workflows](.github/workflows) directory.
-
-Pull-requests are merged to `dev` and the changes are immediately deployed to the development environment. Releases are created to push changes to production in the `main` branch.
+```bash
+cookiecutter -f -s . --directory=tierX
+```
 
 ## Contributing
 
-Thank you for considering contributing to an Open Source project of the UNDP! For more information about our contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) and our [COMMUNITY.md](COMMUNITY.md). Feedback is welcome — please file an issue on this repository.
 
-## Community
+## License
 
-The repo-scaffolder team is taking a community-first and open source approach to the product development of this tool. We believe government software should be made in the open and be built and licensed such that anyone can download the code, run it themselves without paying money to third parties or using proprietary software, and use it as they will.
+This project is licensed under the **GNU General Public License v3.0** — see [LICENSE](LICENSE). GPL-3.0 is an OSI-approved license, so this tool itself satisfies DPG Indicator 2 for software.
 
-We know that we can learn from a wide variety of communities, including those who will use or will be impacted by the tool, who are experts in technology, or who have experience with similar technologies deployed in other spaces. We are dedicated to creating forums for continuous conversation and feedback to help shape the design and development of the tool.
+## Acknowledgements
 
-We also recognize capacity building as a key part of involving a diverse open source community. We are doing our best to use accessible language, provide technical and process documents, and offer support to community members with a wide variety of backgrounds and skillsets.
-
-### Community Guidelines
-
-Principles and guidelines for participating in our open source community are can be found in [COMMUNITY.md](COMMUNITY.md). Please read them before joining or starting a conversation in this repo or one of the channels listed below. All community members and participants are expected to adhere to the community guidelines and code of conduct when participating in community spaces including: code repositories, communication channels and venues, and events.
-
-## Feedback
-
-If you have ideas for how we can improve or add to our capacity building efforts and methods for welcoming people into our community, please let us know at opensource@cms.hhs.gov. If you would like to comment on the tool itself, please let us know by filing an **issue on our GitHub repository.**
-
-## Acknowlegements
-
-This project was developed as a collaboration between the United States Digital
-Service ([USDS.gov](https://usds.gov)), The Department of Health and Human
-Services ([HHS.gov](https://hhs.gov)), The Digital Service at the Centers for
-Medicare & Medicaid Services ([CMS.gov](https://cms.gov)) and The
-[USDigitalResponse.org](https://usdigitalresponse.org).
-
-## Public domain
-
-This project is in the public domain within the United States, and copyright
-and related rights in the work worldwide are waived through the [CC0 1.0
-Universal public domain
-dedication](https://creativecommons.org/publicdomain/zero/1.0/) as indicated in [LICENSE](LICENSE).
-
-All contributions to this project will be released under the CC0 dedication. By
-submitting a pull request or issue, you are agreeing to comply with this waiver
-of copyright interest.
+This project was adapted from the [CMS/DSACMS](https://github.com/DSACMS/repo-scaffolder) Open Source Program Office's `repo-scaffolder` and re-anchored onto the [Digital Public Goods Standard](https://www.digitalpublicgoods.net/standard) maintained by the [Digital Public Goods Alliance](https://www.digitalpublicgoods.net/). We thank both communities for their work.
