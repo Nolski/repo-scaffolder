@@ -119,6 +119,12 @@ def check_license(repo, project_type):
                 method = "licensee"
             except Exception:  # noqa: BLE001
                 pass
+        # licensee returns "NOASSERTION" when it can't match the file to a known
+        # license (e.g. a short SPDX-tag stub). Treat that as "undetected" so the
+        # SPDX-tag/text-sniff fallback below can still honor an explicit identifier.
+        if detected in (None, "", "NOASSERTION"):
+            detected = None
+            method = None  # so the fallback below labels the real detection method
 
     if detected is None and _have("reuse"):
         rc, out, _ = _run(["reuse", "lint", "--json"], cwd=str(repo))

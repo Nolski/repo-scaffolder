@@ -12,33 +12,42 @@ incrementally and confirm before large or destructive changes.
 
 ## Procedure
 
+0. **Locate the toolkit.** This skill ships inside the repo-scaffolder toolkit (templates,
+   scripts, knowledge files). Set `TOOLKIT` = the directory three levels above this skill's
+   base directory (the "Base directory for this skill" path ends in `/.claude/skills/dpg-remediate`;
+   `TOOLKIT` is the part before `/.claude/`). All `$TOOLKIT/…` paths below are absolute, so
+   this works regardless of which project is the current directory or where the target repo
+   lives. (If installed separately from the toolkit, `$TOOLKIT` is your repo-scaffolder checkout.)
+
 1. **Get the assessment.** Look for a recent `dpg-assessment.json` (in the target repo or
    `/tmp`). If none exists or it's stale, run the `dpg-assess` skill first. Read it to get
    `current_tier`, `target_tier`, the per-indicator `status`, and `blockers`.
 
-2. **Read the playbook.** Read `maturity/indicators.md` (the `remediate:` row for each
-   indicator), `maturity/tier-model.md`, and `templates/README.md` (which template closes
-   which indicator + the placeholder convention).
+2. **Read the playbook.** Read `$TOOLKIT/maturity/indicators.md` (the `remediate:` row for each
+   indicator), `$TOOLKIT/maturity/tier-model.md`, and `$TOOLKIT/templates/README.md` (which
+   template closes which indicator + the placeholder convention).
 
 3. **Work the blockers** for `target_tier`, one indicator at a time, in the gap report's
    priority order. For each:
-   - **Instantiate the template** from `templates/` into the target repo (see mapping
+   - **Instantiate the template** from `$TOOLKIT/templates/` into the target repo (see mapping
      below). **Fill every `{{ … }}` token** with a real value derived from the repo
      (project name, contact, today's date) — never leave raw tokens. Replace the `…`
      prompts with project-specific content where you can infer it; where you genuinely
      can't, leave a clearly-marked `TODO:` and tell the user what to supply.
-   - **Re-run the relevant audit check** (`python3 scripts/audit/run_audit.py <repo> --type <type>`)
+   - **Re-run the relevant audit check** (`python3 "$TOOLKIT/scripts/audit/run_audit.py" <repo> --type <type>`)
      and confirm the indicator now passes. Report before/after.
 
 4. **Repeat** until `target_tier` is reached, then offer to continue to the next tier.
 
 5. **At Tier 4 (all 9 indicators met)** generate the **DPG nominee package**: a JSON object
-   validated against `maturity/nominee-schema.json`, written to `dpg-nominee.json` in the
+   validated against `$TOOLKIT/maturity/nominee-schema.json`, written to `dpg-nominee.json` in the
    repo. Populate `name`, `description`, `license[]` (SPDX + URL), `organizations[]`,
    `SDGs[]` (with evidence), `type`, `stage: "nominee"`, and optional `sectors`/`repositories`.
    Then point the user to <https://app.digitalpublicgoods.net> to submit.
 
 ## Indicator → action map
+
+All `templates/…`, `maturity/…`, and `scripts/…` paths below live under `$TOOLKIT/` (see Procedure step 0); the files you create/edit live in the **target repo**.
 
 | Blocker | Action |
 |---|---|
@@ -57,7 +66,7 @@ incrementally and confirm before large or destructive changes.
 ## License chooser (Indicator 2 — do this carefully)
 
 1. Determine project `type` (software / content / data). Ask if unclear.
-2. Read `maturity/licenses.json` → `categories[type].recommended_default_prompt` for the
+2. Read `$TOOLKIT/maturity/licenses.json` → `categories[type].recommended_default_prompt` for the
    shortlist, or the full `spdx` list on request.
 3. Present the options with one-line trade-offs (e.g. MIT = simplest; Apache-2.0 = patent
    grant; AGPL-3.0 = network copyleft). **Do not pick for the user** — there is no default.

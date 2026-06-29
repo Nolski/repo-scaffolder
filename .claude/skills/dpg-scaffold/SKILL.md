@@ -11,17 +11,24 @@ licensing files for its target DPG maturity tier.
 
 ## Procedure
 
-1. **Pick the tier.** Read `maturity/tier-model.md` and help the user choose (0–4) based
-   on intent. If unsure, walk them through `tier-determiner.py` (`python3 tier-determiner.py`).
+0. **Locate the toolkit.** The cookiecutter templates live in the repo-scaffolder toolkit. Set
+   `TOOLKIT` = the directory three levels above this skill's base directory (the "Base directory
+   for this skill" path ends in `/.claude/skills/dpg-scaffold`; `TOOLKIT` is the part before
+   `/.claude/`). The commands below use `$TOOLKIT` so they work from any current directory.
+   (If installed separately from the toolkit, `$TOOLKIT` is your repo-scaffolder checkout.)
+
+1. **Pick the tier.** Read `$TOOLKIT/maturity/tier-model.md` and help the user choose (0–4)
+   based on intent. If unsure, walk them through `python3 "$TOOLKIT/tier-determiner.py"`.
    Higher tiers scaffold more files (privacy, governance, content-moderation as applicable).
 
-2. **Run cookiecutter** for that tier from this project root:
+2. **Run cookiecutter** for that tier, generating into the directory where the new project
+   should live (cookiecutter creates a subfolder there):
    ```bash
-   cookiecutter . --directory=tier<N>
+   cookiecutter "$TOOLKIT" --directory=tier<N> --output-dir <DEST_DIR>
    ```
    Answer the prompts. Note the **license prompt** is mandatory and type-aware
    (software → OSI license; content → Creative Commons; data → Open Definition) — there is
-   no CC0-for-software default. Allow-lists live in `maturity/licenses.json`.
+   no CC0-for-software default. Allow-lists live in `$TOOLKIT/maturity/licenses.json`.
 
 3. **Assess the result.** After generation, offer to run `dpg-assess` on the new repo to
    confirm it starts at the intended tier and to list any remaining judgment-based gaps
@@ -29,7 +36,7 @@ licensing files for its target DPG maturity tier.
 
 ## Notes
 
-- Requires `cookiecutter` (`pip install -r requirements.txt`). For GitHub repo creation the
+- Requires `cookiecutter` (`pip install -r "$TOOLKIT/requirements.txt"`). For GitHub repo creation the
   hooks use the `gh` CLI — that step is optional and prompted.
 - This skill is for **new** repos. The bulk of the value for existing projects is in
   `dpg-assess` → `dpg-remediate`.
