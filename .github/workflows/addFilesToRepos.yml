@@ -9,7 +9,7 @@ on:
                 required: true
             org:
                 description: 'Org to search for repos in'
-                default: 'DSACMS'
+                default: 'UNDP'
                 required: true
             files:
                 description: 'File or folders to add'
