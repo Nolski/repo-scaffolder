@@ -11,11 +11,16 @@ licensing files for its target DPG maturity tier.
 
 ## Procedure
 
-0. **Locate the toolkit.** The cookiecutter templates live in the repo-scaffolder toolkit. Set
-   `TOOLKIT` = the directory three levels above this skill's base directory (the "Base directory
-   for this skill" path ends in `/.claude/skills/dpg-scaffold`; `TOOLKIT` is the part before
-   `/.claude/`). The commands below use `$TOOLKIT` so they work from any current directory.
-   (If installed separately from the toolkit, `$TOOLKIT` is your repo-scaffolder checkout.)
+0. **Locate the toolkit.** The cookiecutter templates and knowledge files live in the
+   **dpg-toolkit** (the repo-scaffolder repo, or the installed plugin). Resolve `$TOOLKIT`: if
+   `CLAUDE_PLUGIN_ROOT` is set, use it; otherwise start from this skill's base directory (shown
+   to you) and walk up parent directories until you reach the one containing both `maturity/`
+   and `scripts/audit/run_audit.py` — that is `$TOOLKIT`. Works as a project skill or an
+   installed plugin, from any working directory:
+   ```bash
+   TOOLKIT="${CLAUDE_PLUGIN_ROOT:-}"; D='<SKILL_BASE_DIR>'
+   while [ -z "$TOOLKIT" ] && [ "$D" != "/" ]; do { [ -d "$D/maturity" ] && [ -f "$D/scripts/audit/run_audit.py" ]; } && TOOLKIT="$D"; D=$(dirname "$D"); done
+   ```
 
 1. **Pick the tier.** Read `$TOOLKIT/maturity/tier-model.md` and help the user choose (0–4)
    based on intent. If unsure, walk them through `python3 "$TOOLKIT/tier-determiner.py"`.

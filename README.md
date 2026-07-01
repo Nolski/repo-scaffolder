@@ -26,6 +26,18 @@ The primary interface is a set of [Claude Code](https://claude.com/claude-code) 
 
 Typical flow: **assess → remediate → re-assess**, repeating until the repo reaches Tier 4 and is ready to nominate at <https://app.digitalpublicgoods.net>.
 
+### Two ways to use the skills
+
+1. **From this repo** — clone it and open Claude Code here; the skills load automatically (they live in `.claude/skills/`). Point them at any project on disk, e.g. `dpg-assess /path/to/other-project`.
+2. **As a plugin, in any project** — this repo is also a Claude Code plugin (`dpg-toolkit`), so the skills can be installed globally and used from inside any repository:
+
+   ```
+   /plugin marketplace add Nolski/repo-scaffolder
+   /plugin install dpg-toolkit@repo-scaffolder
+   ```
+
+   The plugin bundles the skills **and** their dependencies (`scripts/`, `maturity/`, `templates/`). Each skill locates the toolkit at runtime (via `CLAUDE_PLUGIN_ROOT` or by walking up to the directory containing `maturity/` + `scripts/`), so the full **assess → remediate → scaffold** flow runs in one session regardless of the working directory. (The audit scripts also run standalone — see below — needing only Python 3.)
+
 ## Repository structure
 
 | Path | What it is |

@@ -1,0 +1,21 @@
+{
+  "name": "dpg-toolkit",
+  "version": "0.1.0",
+  "description": "Assess, remediate, and scaffold repositories toward Digital Public Good (DPG) readiness against the DPG Standard's 9 indicators. Bundles the dpg-assess / dpg-remediate / dpg-scaffold skills plus the audit engine, knowledge core, and remediation templates.",
+  "author": {
+    "name": "Mike Nolan",
+    "email": "me@michael-nolan.com"
+  },
+  "homepage": "https://github.com/Nolski/repo-scaffolder",
+  "repository": "https://github.com/Nolski/repo-scaffolder",
+  "license": "GPL-3.0",
+  "keywords": [
+    "dpg",
+    "digital-public-goods",
+    "open-source",
+    "compliance",
+    "audit",
+    "security",
+    "maturity"
+  ]
+}

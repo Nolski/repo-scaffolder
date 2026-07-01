@@ -15,7 +15,12 @@ Assess how close a repository is to being a **Digital Public Good** (per the [DP
 
 ## Procedure
 
-0. **Locate the toolkit.** This skill ships inside the repo-scaffolder toolkit, which also holds the audit scripts and knowledge files. Set `TOOLKIT` = the directory three levels above this skill's base directory (the "Base directory for this skill" path ends in `/.claude/skills/dpg-assess`; `TOOLKIT` is the part before `/.claude/`). Everything below uses absolute paths under `$TOOLKIT`, so it works no matter which project is the current directory. (If this skill was installed separately from the toolkit repo, `$TOOLKIT` is wherever your repo-scaffolder checkout lives — confirm with the user if unsure.)
+0. **Locate the toolkit.** This skill ships inside the **dpg-toolkit** (the repo-scaffolder repo, or the installed plugin) alongside the audit scripts (`scripts/`), knowledge files (`maturity/`), and templates (`templates/`). Resolve `$TOOLKIT`: if `CLAUDE_PLUGIN_ROOT` is set, use it; otherwise start from this skill's base directory (the "Base directory for this skill" shown to you) and walk up parent directories until you reach the one containing both `maturity/` and `scripts/audit/run_audit.py`. That directory is `$TOOLKIT`. This works as a project skill or an installed plugin, from any working directory:
+   ```bash
+   TOOLKIT="${CLAUDE_PLUGIN_ROOT:-}"; D='<SKILL_BASE_DIR>'
+   while [ -z "$TOOLKIT" ] && [ "$D" != "/" ]; do { [ -d "$D/maturity" ] && [ -f "$D/scripts/audit/run_audit.py" ]; } && TOOLKIT="$D"; D=$(dirname "$D"); done
+   ```
+   All `$TOOLKIT/…` paths below are absolute, so nothing depends on the current directory or the target repo's location.
 
 1. **Run the audit** on the target repo (the project being assessed — it can live anywhere and need not be the current directory):
    ```bash

@@ -12,12 +12,17 @@ incrementally and confirm before large or destructive changes.
 
 ## Procedure
 
-0. **Locate the toolkit.** This skill ships inside the repo-scaffolder toolkit (templates,
-   scripts, knowledge files). Set `TOOLKIT` = the directory three levels above this skill's
-   base directory (the "Base directory for this skill" path ends in `/.claude/skills/dpg-remediate`;
-   `TOOLKIT` is the part before `/.claude/`). All `$TOOLKIT/…` paths below are absolute, so
-   this works regardless of which project is the current directory or where the target repo
-   lives. (If installed separately from the toolkit, `$TOOLKIT` is your repo-scaffolder checkout.)
+0. **Locate the toolkit.** This skill ships inside the **dpg-toolkit** (the repo-scaffolder repo,
+   or the installed plugin) alongside the templates (`templates/`), scripts (`scripts/`), and
+   knowledge files (`maturity/`). Resolve `$TOOLKIT`: if `CLAUDE_PLUGIN_ROOT` is set, use it;
+   otherwise start from this skill's base directory (shown to you) and walk up parent directories
+   until you reach the one containing both `maturity/` and `scripts/audit/run_audit.py` — that is
+   `$TOOLKIT`. Works as a project skill or an installed plugin, from any working directory:
+   ```bash
+   TOOLKIT="${CLAUDE_PLUGIN_ROOT:-}"; D='<SKILL_BASE_DIR>'
+   while [ -z "$TOOLKIT" ] && [ "$D" != "/" ]; do { [ -d "$D/maturity" ] && [ -f "$D/scripts/audit/run_audit.py" ]; } && TOOLKIT="$D"; D=$(dirname "$D"); done
+   ```
+   All `$TOOLKIT/…` paths below are absolute; the files you create/edit live in the target repo.
 
 1. **Get the assessment.** Look for a recent `dpg-assessment.json` (in the target repo or
    `/tmp`). If none exists or it's stale, run the `dpg-assess` skill first. Read it to get
